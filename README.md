@@ -124,7 +124,7 @@ For a detailed introduction, full list of features and architecture overview ple
 
 1. Install [Docker](https://www.docker.com)
 2. Run `docker pull bkimminich/juice-shop`
-3. Run `docker run --rm -p 127.0.0.1:3322:3000 bkimminich/juice-shop`
+3. Run `docker run --rm -p 127.0.0.1:3322:3322 bkimminich/juice-shop`
 4. Browse to <http://localhost:3322> (on macOS and Windows browse to
    <http://192.168.99.100:3322> if you are using docker-machine instead of the native docker installation)
 
@@ -152,7 +152,7 @@ npm start
 For Docker, pass the same variables with `-e`:
 
 ```bash
-docker run --rm -p 127.0.0.1:3322:3000 \
+docker run --rm -p 127.0.0.1:3323:3000 \
   -e APPLICATION_NAME='Yak Hair & Flair' \
   -e APPLICATION_WELCOME_MESSAGE='<p class="welcome-text">Get your yak shaving supplies soon. Join our workshop on exclusive AI-proof job skills. Located behind the old bike shed, swing by whenever.</p>' \
   -e APPLICATION_SHOW_GITHUB_LINKS=false \
@@ -162,6 +162,9 @@ docker run --rm -p 127.0.0.1:3322:3000 \
   -e PRODUCT_OVERRIDES='{"1":{"name":"Yak Shaving Starter Kit","description":"Everything you need for artisanal yak maintenance and extremely specific career pivots.","image":"yak-shaving-kit.png","price":4.99,"deluxePrice":4.49,"limitPerUser":3,"reviews":[{"text":"My yak looks employable now. Five stars.","author":"admin"}]},"Orange Juice (1000ml)":{"name":"Yak Hair, Bulk Pack","image":"yak-hair.png"}}' \
   ghcr.io/justsml/juice-shop:latest
 ```
+
+To run several Docker containers in parallel, keep the container-side port fixed and change only the host-side port,
+for example `-p 127.0.0.1:3324:3000`. For source or packaged installs, use `PORT=3324 npm start`.
 
 If you want goofy one-off name, theme, and product values, these links open a prefilled prompt in a new AI chat:
 
