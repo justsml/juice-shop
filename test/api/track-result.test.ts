@@ -10,6 +10,7 @@ import type { Express } from 'express'
 import { createTestApp } from './helpers/setup'
 
 let app: Express
+const challengeTokenHeader = { 'x-token': '123abc' }
 
 before(async () => {
   const result = await createTestApp()
@@ -20,12 +21,26 @@ void describe('/rest/track-order/:id', () => {
   void it('GET tracking results for the order id', async () => {
     const res = await request(app)
       .get('/rest/track-order/5267-f9cd5882f54c75a3')
+      .set(challengeTokenHeader)
+    assert.equal(res.status, 200)
+  })
+
+  void it('GET tracking results returns 404 without challenge API token', async () => {
+    const res = await request(app)
+      .get('/rest/track-order/5267-f9cd5882f54c75a3')
+    assert.equal(res.status, 404)
+  })
+
+  void it('GET tracking results accepts challenge API token from query string', async () => {
+    const res = await request(app)
+      .get('/rest/track-order/5267-f9cd5882f54c75a3?x-token=123abc')
     assert.equal(res.status, 200)
   })
 
   void it('GET all orders by injecting into orderId', async () => {
     const res = await request(app)
       .get('/rest/track-order/%27%20%7C%7C%20true%20%7C%7C%20%27')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
     assert.ok(res.headers['content-type']?.includes('application/json'))
     assert.ok(Array.isArray(res.body.data))

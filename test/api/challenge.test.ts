@@ -14,6 +14,7 @@ import { ChallengeModel } from '../../models/challenge'
 
 let app: Express
 const authHeader = { Authorization: 'Bearer ' + security.authorize(), 'content-type': 'application/json' }
+const challengeTokenHeader = { 'x-token': '123abc' }
 
 before(async () => {
   const result = await createTestApp()
@@ -26,6 +27,7 @@ void describe('/api/Challenges', () => {
   void it('GET all challenges', async () => {
     const res = await request(app)
       .get('/api/Challenges')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
     assert.ok(res.headers['content-type']?.includes('application/json'))
     assert.ok(Array.isArray(res.body.data))
@@ -39,10 +41,23 @@ void describe('/api/Challenges', () => {
     }
   })
 
+  void it('GET all challenges returns 404 without challenge API token', async () => {
+    const res = await request(app)
+      .get('/api/Challenges')
+    assert.equal(res.status, 404)
+  })
+
+  void it('GET all challenges accepts challenge API token from query string', async () => {
+    const res = await request(app)
+      .get('/api/Challenges?x-token=123abc')
+    assert.equal(res.status, 200)
+  })
+
   void it('POST new challenge is forbidden via public API even when authenticated', async () => {
     const res = await request(app)
       .post('/api/Challenges')
       .set(authHeader)
+      .set(challengeTokenHeader)
       .send({
         name: 'Invulnerability',
         description: 'I am not a vulnerability!',
@@ -62,6 +77,7 @@ void describe('/api/Challenges', () => {
     const challengeCount = await ChallengeModel.count()
     const res = await request(app)
       .get('/api/Challenges/progress')
+      .set(challengeTokenHeader)
 
     assert.equal(res.status, 200)
     assert.ok(res.headers['content-type']?.includes('application/json'))
@@ -84,6 +100,7 @@ void describe('/api/Challenges/:id', () => {
     const res = await request(app)
       .get('/api/Challenges/1')
       .set(authHeader)
+      .set(challengeTokenHeader)
     assert.equal(res.status, 401)
   })
 
@@ -91,6 +108,7 @@ void describe('/api/Challenges/:id', () => {
     const res = await request(app)
       .put('/api/Challenges/1')
       .set(authHeader)
+      .set(challengeTokenHeader)
       .send({
         name: 'Vulnerability',
         description: 'I am a vulnerability!!!',
@@ -103,7 +121,30 @@ void describe('/api/Challenges/:id', () => {
     const res = await request(app)
       .delete('/api/Challenges/1')
       .set(authHeader)
+      .set(challengeTokenHeader)
     assert.equal(res.status, 401)
+  })
+})
+
+void describe('/api/Hints', () => {
+  void it('GET all hints returns 404 without challenge API token', async () => {
+    const res = await request(app)
+      .get('/api/Hints')
+    assert.equal(res.status, 404)
+  })
+
+  void it('GET all hints returns 404 with invalid challenge API token', async () => {
+    const res = await request(app)
+      .get('/api/Hints')
+      .set({ 'x-token': 'wrong' })
+    assert.equal(res.status, 404)
+  })
+
+  void it('GET all hints is allowed with challenge API token', async () => {
+    const res = await request(app)
+      .get('/api/Hints')
+      .set(challengeTokenHeader)
+    assert.equal(res.status, 200)
   })
 })
 
@@ -111,30 +152,41 @@ void describe('/rest/continue-code', () => {
   void it('GET can retrieve continue code for currently solved challenges', async () => {
     const res = await request(app)
       .get('/rest/continue-code')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
+  })
+
+  void it('GET continue code returns 404 without challenge API token', async () => {
+    const res = await request(app)
+      .get('/rest/continue-code')
+    assert.equal(res.status, 404)
   })
 
   void it('PUT invalid continue code is rejected (alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code/apply/ThisIsDefinitelyNotAValidContinueCode')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT invalid continue code is rejected (non-alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code/apply/%3Cimg%20src=nonexist1%20onerror=alert()%3E')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT continue code for more than one challenge is accepted', async () => {
     const res = await request(app)
       .put('/rest/continue-code/apply/yXjv6Z5jWJnzD6a3YvmwPRXK7roAyzHDde2Og19yEN84plqxkMBbLVQrDeoY')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 
   void it('PUT continue code for non-existent challenge #999 is accepted', async () => {
     const res = await request(app)
       .put('/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 })
@@ -143,24 +195,28 @@ void describe('/rest/continue-code-findIt', () => {
   void it('GET can retrieve continue code for currently solved challenges', async () => {
     const res = await request(app)
       .get('/rest/continue-code-findIt')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 
   void it('PUT invalid continue code is rejected (alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code-findIt/apply/ThisIsDefinitelyNotAValidContinueCode')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT completely invalid continue code is rejected (non-alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code-findIt/apply/%3Cimg%20src=nonexist1%20onerror=alert()%3E')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT continue code for more than one challenge is accepted', async () => {
     const res = await request(app)
       .put('/rest/continue-code-findIt/apply/Xg9oK0VdbW5g1KX9G7JYnqLpz3rAPBh6p4eRlkDM6EaBON2QoPmxjyvwMrP6')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 })
@@ -169,24 +225,28 @@ void describe('/rest/continue-code-fixIt', () => {
   void it('GET can retrieve continue code for currently solved challenges', async () => {
     const res = await request(app)
       .get('/rest/continue-code-fixIt')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 
   void it('PUT invalid continue code is rejected (alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code-fixIt/apply/ThisIsDefinitelyNotAValidContinueCode')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT completely invalid continue code is rejected (non-alphanumeric)', async () => {
     const res = await request(app)
       .put('/rest/continue-code-fixIt/apply/%3Cimg%20src=nonexist1%20onerror=alert()%3E')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 404)
   })
 
   void it('PUT continue code for more than one challenge is accepted', async () => {
     const res = await request(app)
       .put('/rest/continue-code-fixIt/apply/y28BEPE2k3yRrdz5p6DGqJONnj41n5UEWawYWgBMoVmL79bKZ8Qve0Xl5QLW')
+      .set(challengeTokenHeader)
     assert.equal(res.status, 200)
   })
 })

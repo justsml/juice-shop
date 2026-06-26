@@ -56,6 +56,7 @@ describe('KeysService', () => {
     })
     const req = httpMock.expectOne('http://localhost:3000/api/Challenges/?key=nftMintChallenge')
     expect(req.request.method).toBe('GET')
+    expect(req.request.headers.get('x-token')).toBe('123abc')
     req.flush('apiResponse')
   })
 

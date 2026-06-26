@@ -17,10 +17,12 @@
   app.put('/api/Products/:id', security.denyAll())
   app.delete('/api/Products/:id', security.denyAll())
   /* Challenges: GET list of challenges allowed. Everything else forbidden entirely */
+  app.use('/api/Challenges', requireChallengeApiToken)
   app.get('/api/Challenges/progress', utils.asyncHandler(challengeProgress()))
   app.post('/api/Challenges', security.denyAll())
   app.use('/api/Challenges/:id', security.denyAll())
   /* Hints: GET and PUT hints allowed. Everything else forbidden */
+  app.use('/api/Hints', requireChallengeApiToken)
   app.post('/api/Hints', security.denyAll())
   app.route('/api/Hints/:id')
     .get(security.denyAll())

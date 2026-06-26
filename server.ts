@@ -128,6 +128,16 @@ import { orderHistory, allOrders, toggleDeliveryStatus } from './routes/orderHis
 import { continueCode, continueCodeFindIt, continueCodeFixIt } from './routes/continueCode'
 import { ensureFileIsPassed, handleZipFileUpload, checkUploadSize, checkFileType, handleXmlUpload, handleYamlUpload } from './routes/fileUpload'
 
+const CHALLENGE_API_TOKEN = '123abc'
+
+function requireChallengeApiToken (req: Request, res: Response, next: NextFunction) {
+  if (req.get('x-token') === CHALLENGE_API_TOKEN || req.query['x-token'] === CHALLENGE_API_TOKEN) {
+    next()
+    return
+  }
+  res.sendStatus(404)
+}
+
 const app = express()
 const server = new http.Server(app)
 
@@ -371,10 +381,12 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   // app.put('/api/Products/:id', security.isAuthorized()) // vuln-code-snippet vuln-line changeProductChallenge
   app.delete('/api/Products/:id', security.denyAll())
   /* Challenges: GET list of challenges allowed. Everything else forbidden entirely */
+  app.use('/api/Challenges', requireChallengeApiToken)
   app.get('/api/Challenges/progress', utils.asyncHandler(challengeProgress()))
   app.post('/api/Challenges', security.denyAll())
   app.use('/api/Challenges/:id', security.denyAll())
   /* Hints: GET and PUT hints allowed. Everything else forbidden */
+  app.use('/api/Hints', requireChallengeApiToken)
   app.post('/api/Hints', security.denyAll())
   app.route('/api/Hints/:id')
     .get(security.denyAll())
@@ -608,6 +620,9 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   app.get('/rest/admin/application-version', utils.asyncHandler(retrieveAppVersion()))
   app.get('/rest/admin/application-configuration', utils.asyncHandler(retrieveAppConfiguration()))
   app.get('/rest/repeat-notification', utils.asyncHandler(repeatNotification()))
+  app.use('/rest/continue-code', requireChallengeApiToken)
+  app.use('/rest/continue-code-findIt', requireChallengeApiToken)
+  app.use('/rest/continue-code-fixIt', requireChallengeApiToken)
   app.get('/rest/continue-code', utils.asyncHandler(continueCode()))
   app.get('/rest/continue-code-findIt', utils.asyncHandler(continueCodeFindIt()))
   app.get('/rest/continue-code-fixIt', utils.asyncHandler(continueCodeFixIt()))
@@ -616,6 +631,7 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   app.put('/rest/continue-code/apply/:continueCode', utils.asyncHandler(restoreProgress.restoreProgress()))
   app.get('/rest/captcha', utils.asyncHandler(captchas()))
   app.get('/rest/image-captcha', utils.asyncHandler(imageCaptchas()))
+  app.use('/rest/track-order', requireChallengeApiToken)
   app.get('/rest/track-order/:id', trackOrder())
   app.get('/rest/country-mapping', utils.asyncHandler(countryMapping()))
   app.get('/rest/saveLoginIp', utils.asyncHandler(saveLoginIp()))

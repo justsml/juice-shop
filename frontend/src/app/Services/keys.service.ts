@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { catchError, map } from 'rxjs/operators'
 import { environment } from '../../environments/environment'
+import { challengeApiTokenHeader } from './challenge-api-token'
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class KeysService {
   }
 
   checkNftMinted () {
-    return this.http.get(this.hostServer + '/api/Challenges/?key=nftMintChallenge').pipe(
+    return this.http.get(this.hostServer + '/api/Challenges/?key=nftMintChallenge', { headers: challengeApiTokenHeader }).pipe(
       map((response: any) => response),
       catchError((err) => {
         throw err

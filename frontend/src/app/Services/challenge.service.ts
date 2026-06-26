@@ -9,6 +9,7 @@ import { Injectable, inject } from '@angular/core'
 import { type Observable } from 'rxjs'
 import { catchError, map } from 'rxjs/operators'
 import { type Challenge } from '../Models/challenge.model'
+import { challengeApiTokenHeader } from './challenge-api-token'
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class ChallengeService {
   private readonly host = this.hostServer + '/api/Challenges'
 
   find (params?: any): Observable<Challenge[]> {
-    return this.http.get(this.host + '/', { params }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
+    return this.http.get(this.host + '/', { headers: challengeApiTokenHeader, params }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
   repeatNotification (challengeName: string) {
@@ -28,26 +29,26 @@ export class ChallengeService {
   }
 
   continueCode () {
-    return this.http.get(this.hostServer + '/rest/continue-code').pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
+    return this.http.get(this.hostServer + '/rest/continue-code', { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
   }
 
   continueCodeFindIt () {
-    return this.http.get(this.hostServer + '/rest/continue-code-findIt').pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
+    return this.http.get(this.hostServer + '/rest/continue-code-findIt', { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
   }
 
   continueCodeFixIt () {
-    return this.http.get(this.hostServer + '/rest/continue-code-fixIt').pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
+    return this.http.get(this.hostServer + '/rest/continue-code-fixIt', { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
   }
 
   restoreProgress (continueCode: string) {
-    return this.http.put(this.hostServer + '/rest/continue-code/apply/' + continueCode, {}).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
+    return this.http.put(this.hostServer + '/rest/continue-code/apply/' + continueCode, {}, { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
   restoreProgressFindIt (continueCode: string) {
-    return this.http.put(this.hostServer + '/rest/continue-code-findIt/apply/' + continueCode, {}).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
+    return this.http.put(this.hostServer + '/rest/continue-code-findIt/apply/' + continueCode, {}, { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
   restoreProgressFixIt (continueCode: string) {
-    return this.http.put(this.hostServer + '/rest/continue-code-fixIt/apply/' + continueCode, {}).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
+    return this.http.put(this.hostServer + '/rest/continue-code-fixIt/apply/' + continueCode, {}, { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 }

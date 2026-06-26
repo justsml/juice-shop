@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http'
 import { catchError, map } from 'rxjs/operators'
 import type { Observable } from 'rxjs'
 import { Hint } from '../Models/hint.model'
+import { challengeApiTokenHeader } from './challenge-api-token'
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,10 @@ export class HintService {
   private readonly host = this.hostServer + '/api/Hints'
 
   getAll (): Observable<Hint[]> {
-    return this.http.get(this.host + '/').pipe(map((response: any) => response.data), catchError((err) => { throw err }))
+    return this.http.get(this.host + '/', { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
   put (id: number, params): Observable<Hint> {
-    return this.http.put(`${this.host}/${id}`, params).pipe(map((response: any) => response.data), catchError((error) => { throw error }))
+    return this.http.put(`${this.host}/${id}`, params, { headers: challengeApiTokenHeader }).pipe(map((response: any) => response.data), catchError((error) => { throw error }))
   }
 }

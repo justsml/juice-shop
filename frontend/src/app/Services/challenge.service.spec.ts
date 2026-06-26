@@ -34,6 +34,7 @@ describe('ChallengeService', () => {
         req.flush({ data: 'apiResponse' })
 
         expect(req.request.method).toBe('GET')
+        expect(req.request.headers.get('x-token')).toBe('123abc')
         expect(res).toBe('apiResponse')
         httpMock.verify()
     })
@@ -49,6 +50,7 @@ describe('ChallengeService', () => {
         req.flush({ continueCode: 'apiResponse' })
 
         expect(req.request.method).toBe('GET')
+        expect(req.request.headers.get('x-token')).toBe('123abc')
         expect(res).toBe('apiResponse')
         httpMock.verify()
     })
@@ -64,6 +66,7 @@ describe('ChallengeService', () => {
         req.flush({ data: 'apiResponse' })
 
         expect(req.request.method).toBe('PUT')
+        expect(req.request.headers.get('x-token')).toBe('123abc')
         expect(res).toBe('apiResponse')
         httpMock.verify()
     })
