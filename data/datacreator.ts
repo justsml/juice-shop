@@ -448,17 +448,22 @@ async function createProducts () {
         })
           .then(async ({ id }: { id: number }) =>
             await Promise.all(
-              reviews.map(({ text, author }) =>
-                reviewsCollection.insert({
+              reviews.map(({ text, author }) => {
+                const reviewAuthor = datacache.users[author]
+                if (!reviewAuthor) {
+                  logger.warn(`Skipping Product Review ${text}: unknown author ${author}`)
+                  return Promise.resolve()
+                }
+                return reviewsCollection.insert({
                   message: text,
-                  author: datacache.users[author].email,
+                  author: reviewAuthor.email,
                   product: id,
                   likesCount: 0,
                   likedBy: []
                 }).catch((err: unknown) => {
                   logger.error(`Could not insert Product Review ${text}: ${utils.getErrorMessage(err)}`)
                 })
-              )
+              })
             )
           )
     )
