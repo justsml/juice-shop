@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -92,11 +87,11 @@ void describe('Server', () => {
     assert.equal(res.status, 200)
   })
 
-  void it('GET serves a csaf juice-shop-sa-20200513-express-jwt.json', async () => {
+  void it('GET serves a csaf hard-commerce-lab-sa-20200513-express-jwt.json', async () => {
     const res = await request(app)
-      .get('/.well-known/csaf/2017/juice-shop-sa-20200513-express-jwt.json')
+      .get('/.well-known/csaf/2017/hard-commerce-lab-sa-20200513-express-jwt.json')
     assert.equal(res.status, 200)
-    assert.ok(res.text.includes('juice-shop-sa-20200513-express-jwt'))
+    assert.ok(res.text.includes('hard-commerce-lab-sa-20200513-express-jwt'))
     assert.ok(res.text.includes('We will soon release a patch'))
   })
 })

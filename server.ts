@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
 import i18n from 'i18n'
 import cors from 'cors'
 import fs from 'node:fs'
@@ -15,6 +11,7 @@ import path from 'node:path'
 import express from 'express'
 import colors from 'colors/safe'
 import serveIndex from 'serve-index'
+// @ts-expect-error FIXME due to non-existing type definitions for body-parser in the build resolver
 import bodyParser from 'body-parser'
 // @ts-expect-error FIXME due to non-existing type definitions for finale-rest
 import * as finale from 'finale-rest'

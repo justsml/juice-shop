@@ -1,12 +1,7 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import * as accuracy from '../../lib/accuracy'
-import { type ChallengeKey } from '@juice-shop/models/challenge'
+import { type ChallengeKey } from '@juice-commerce/models/challenge'
 
 void describe('accuracy', () => {
   void it('should calculate accuracy as 1.0 when solved on first attempt', () => {

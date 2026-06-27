@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import config from 'config'
 import { type Request, type Response, type NextFunction } from 'express'
 
@@ -57,9 +52,9 @@ export function resetPassword () {
 function verifySecurityAnswerChallenges (user: UserModel, answer: string) {
   challengeUtils.solveIf(challenges.resetPasswordJimChallenge, () => { return user.id === users.jim.id && answer === 'Samuel' })
   challengeUtils.solveIf(challenges.resetPasswordBenderChallenge, () => { return user.id === users.bender.id && answer === 'Stop\'n\'Drop' })
-  challengeUtils.solveIf(challenges.resetPasswordBjoernChallenge, () => { return user.id === users.bjoern.id && answer === 'West-2082' })
+  challengeUtils.solveIf(challenges.resetPasswordCaseyChallenge, () => { return user.id === users.casey.id && answer === 'West-2082' })
   challengeUtils.solveIf(challenges.resetPasswordMortyChallenge, () => { return user.id === users.morty.id && answer === '5N0wb41L' })
-  challengeUtils.solveIf(challenges.resetPasswordBjoernOwaspChallenge, () => { return user.id === users.bjoernOwasp.id && answer === 'Zaya' })
+  challengeUtils.solveIf(challenges.resetPasswordCaseyCorpChallenge, () => { return user.id === users.caseyCorp.id && answer === 'Zaya' })
   challengeUtils.solveIf(challenges.resetPasswordUvoginChallenge, () => { return user.id === users.uvogin.id && answer === 'Silence of the Lambs' })
   challengeUtils.solveIf(challenges.geoStalkingMetaChallenge, () => {
     const securityAnswer = ((() => {

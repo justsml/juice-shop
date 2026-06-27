@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import fs from 'node:fs'
 import config from 'config'
 import { type Request, type Response } from 'express'
@@ -18,6 +13,10 @@ const entities = new Entities()
 export const getVideo = () => {
   return (req: Request, res: Response) => {
     const path = videoPath()
+    if (!path || !fs.existsSync(path)) {
+      res.sendStatus(404)
+      return
+    }
     const stat = fs.statSync(path)
     const fileSize = stat.size
     const range = req.headers.range
@@ -31,7 +30,7 @@ export const getVideo = () => {
         'Content-Range': `bytes ${start}-${end}/${fileSize}`,
         'Accept-Ranges': 'bytes',
         'Content-Length': chunksize,
-        'Content-Location': '/assets/public/videos/owasp_promo.mp4',
+        'Content-Location': '/assets/public/videos/promo.mp4',
         'Content-Type': 'video/mp4'
       }
       res.writeHead(206, head)
@@ -79,15 +78,22 @@ export const promotionVideo = () => {
 }
 
 function getSubsFromFile () {
-  const subtitles = config.get<string>('application.promotion.subtitles') ?? 'owasp_promo.vtt'
-  const data = fs.readFileSync('frontend/dist/frontend/assets/public/videos/' + subtitles, 'utf8')
+  const subtitles = config.get<string>('application.promotion.subtitles')
+  if (!subtitles) {
+    return ''
+  }
+  const subtitlePath = 'frontend/dist/frontend/assets/public/videos/' + utils.extractFilename(subtitles)
+  if (!fs.existsSync(subtitlePath)) {
+    return ''
+  }
+  const data = fs.readFileSync(subtitlePath, 'utf8')
   return data.toString()
 }
 
 function videoPath () {
-  if (config.get<string>('application.promotion.video') !== null) {
-    const video = utils.extractFilename(config.get<string>('application.promotion.video'))
-    return 'frontend/dist/frontend/assets/public/videos/' + video
+  const configuredVideo = config.get<string>('application.promotion.video')
+  if (configuredVideo) {
+    return 'frontend/dist/frontend/assets/public/videos/' + utils.extractFilename(configuredVideo)
   }
-  return 'frontend/dist/frontend/assets/public/videos/owasp_promo.mp4'
+  return ''
 }

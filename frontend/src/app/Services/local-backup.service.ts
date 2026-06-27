@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Injectable, inject } from '@angular/core'
 import { type Backup } from '../Models/backup.model'
 import { CookieService } from 'ngy-cookie'
@@ -23,7 +18,7 @@ export class LocalBackupService {
 
   private readonly VERSION = 1
 
-  async save (fileName = 'owasp_juice_shop'): Promise<void> {
+  async save (fileName = 'hard_commerce_lab'): Promise<void> {
     const backup: Backup = { version: this.VERSION }
 
     backup.banners = {

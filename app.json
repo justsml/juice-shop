@@ -1,25 +1,16 @@
 {
-  "name": "OWASP Juice Shop",
-  "description": "Probably the most modern and sophisticated insecure web application",
+  "name": "Hard Commerce Lab",
+  "description": "Configurable commerce training application",
   "keywords": [
-    "web security",
-    "web application security",
-    "webappsec",
-    "owasp",
-    "pentest",
-    "pentesting",
-    "security",
-    "vulnerable",
-    "vulnerability",
-    "broken",
-    "bodgeit",
-    "ctf",
-    "capture the flag",
-    "awareness"
+    "commerce",
+    "training",
+    "lab",
+    "automation",
+    "challenge"
   ],
-  "website": "https://owasp-juice.shop",
-  "repository": "https://github.com/ExploitHunterApp/hard-juice-shop",
-  "logo": "https://raw.githubusercontent.com/ExploitHunterApp/hard-juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo.png",
+  "website": "https://bike-shed.example",
+  "repository": "https://bike-shed.example/source",
+  "logo": "https://bike-shed.example/assets/logo.svg",
   "engines": {
     "node": "24.x"
   }

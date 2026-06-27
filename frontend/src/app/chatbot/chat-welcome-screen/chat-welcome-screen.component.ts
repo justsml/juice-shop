@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, ChangeDetectionStrategy, output, model, viewChild, signal, inject, OnInit } from '@angular/core'
 import { DatePipe } from '@angular/common'
 import { MatIconModule } from '@angular/material/icon'
@@ -36,8 +31,8 @@ export class ChatWelcomeScreenComponent implements OnInit {
   private readonly inputBox = viewChild(ChatInputBoxComponent)
 
   conversations = signal<StoredConversation[]>(this.conversationStorage.getAll())
-  chatBotName = signal('Juicy')
-  chatBotAvatar = signal('assets/public/images/JuicyBot.png')
+  chatBotName = signal('Yak AI')
+  chatBotAvatar = signal('assets/public/images/ChatbotAvatar.svg')
   sampleQuestions = signal<string[]>([])
 
   ngOnInit () {

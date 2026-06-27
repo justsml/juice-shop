@@ -132,7 +132,7 @@
       },
       "id": 129,
       "options": {
-        "content": "![](https://raw.githubusercontent.com/OWASP/owasp-swag/master/projects/juice-shop/wallpapers/JuiceShop_Wallpaper_900x300.jpg)",
+        "content": "![](https://raw.githubusercontent.com/The community/owasp-swag/master/projects/juice-shop/wallpapers/HardCommerce_Wallpaper_900x300.jpg)",
         "mode": "markdown"
       },
       "pluginVersion": "8.1.5",
@@ -1710,7 +1710,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Juice Shop Version",
+      "title": "Hard Commerce Lab Version",
       "type": "stat"
     },
     {
@@ -2042,7 +2042,7 @@
         "error": null,
         "hide": 2,
         "includeAll": true,
-        "label": "Difficulty Levels supported by JuiceShop",
+        "label": "Difficulty Levels supported by HardCommerce",
         "multi": true,
         "name": "difficulties",
         "options": [
@@ -2107,7 +2107,7 @@
     ]
   },
   "timezone": "",
-  "title": "Juice Shop Instance Status",
+  "title": "Hard Commerce Lab Instance Status",
   "uid": "Sj-cIdwZk",
   "version": 18
 }

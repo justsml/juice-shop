@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, type OnInit, type AfterViewInit, type OnDestroy, ElementRef, inject, input, output, viewChild } from '@angular/core'
 import { MatCardModule } from '@angular/material/card'
 import { TranslateModule } from '@ngx-translate/core'

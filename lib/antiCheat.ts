@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import config from 'config'
 import colors from 'colors/safe'
 import { retrieveCodeSnippet } from '../routes/vulnCodeSnippet'
@@ -14,7 +9,7 @@ import { type NextFunction, type Request, type Response } from 'express'
 import * as utils from './utils'
 // @ts-expect-error FIXME due to non-existing type definitions for median
 import median from 'median'
-import { type ChallengeKey } from '@juice-shop/models/challenge'
+import { type ChallengeKey } from '@juice-commerce/models/challenge'
 
 const tightlyCoupledChallenges = {
   loginAdminChallenge: ['weakPasswordChallenge'],

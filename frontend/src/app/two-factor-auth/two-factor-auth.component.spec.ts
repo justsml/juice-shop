@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { TwoFactorAuthComponent } from './two-factor-auth.component'
 
@@ -50,7 +45,7 @@ describe('TwoFactorAuthComponent', () => {
         configurationService = {
             getApplicationConfiguration: vi.fn().mockName("ConfigurationService.getApplicationConfiguration")
         }
-        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { name: 'OWASP Juice Shop' } }))
+        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { name: 'Hard Commerce Lab' } }))
         snackBarHelperService = { open: vi.fn().mockName('SnackBarHelperService.open') }
         TestBed.configureTestingModule({
             imports: [ReactiveFormsModule,

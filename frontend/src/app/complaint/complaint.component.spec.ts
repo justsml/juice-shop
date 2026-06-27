@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { ComplaintService } from '../Services/complaint.service'
 import { UserService } from '../Services/user.service'
 import { ReactiveFormsModule } from '@angular/forms'

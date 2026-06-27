@@ -1,13 +1,8 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, beforeEach, mock } from 'node:test'
 import assert from 'node:assert/strict'
 import { challenges } from '../../data/datacache'
 import { performRedirect } from '../../routes/redirect'
-import { type Challenge } from '@juice-shop/data/types'
+import { type Challenge } from '@juice-commerce/data/types'
 import { redirectAllowlist } from '../../lib/insecurity'
 
 void describe('redirect', () => {
@@ -76,7 +71,7 @@ void describe('redirect', () => {
   })
 
   void it('tricking the allowlist should solve "redirectChallenge"', () => {
-    req.query.to = 'http://kimminich.de?to=https://github.com/ExploitHunterApp/hard-juice-shop'
+    req.query.to = 'http://kimminich.de?to=https://github.com/ExploitHunterApp/hard-commerce-lab'
     challenges.redirectChallenge = { solved: false, save } as unknown as Challenge
 
     performRedirect()(req, res, next)

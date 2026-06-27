@@ -148,7 +148,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'juicy-nft',
+    path: 'supply-vault',
     component: NFTUnlockComponent
   },
   {

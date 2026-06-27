@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type ToolCall } from '../Services/chat.service'
 
 export { type ToolCall } from '../Services/chat.service'

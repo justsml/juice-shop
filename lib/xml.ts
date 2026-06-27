@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import vm from 'node:vm'
 
 // libxml2-wasm is ESM-only and uses top-level await, so it can neither be

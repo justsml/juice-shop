@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Hard Commerce Lab reward wallpaper">
+  <rect width="1920" height="1080" fill="#f7f3ea"/>
+  <path d="M0 790c220-90 430-120 630-90s330 120 520 140c250 25 450-75 770-40v280H0z" fill="#5d7f71"/>
+  <path d="M0 855c260-80 510-80 750 0s500 80 780 5c135-36 255-47 390-28v248H0z" fill="#273f46"/>
+  <g fill="none" stroke="#273f46" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M660 600h600v270H660z"/>
+    <path d="M745 600V470h430v130"/>
+    <path d="M845 470V360h230v110"/>
+    <path d="M785 870V700h150v170M985 870V700h190v170"/>
+    <path d="M720 650h90M1110 650h90M845 535h90M985 535h90"/>
+  </g>
+  <circle cx="1450" cy="250" r="115" fill="#f1b45b"/>
+  <text x="960" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#273f46">Hard Commerce Lab</text>
+  <text x="960" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#5f6361">Procurement excellence, almost on purpose.</text>
+</svg>

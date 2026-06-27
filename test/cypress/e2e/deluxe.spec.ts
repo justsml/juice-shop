@@ -5,7 +5,7 @@ describe('/#/deluxe-membership', () => {
       cy.location().then((loc) => {
         cy.visit(
           `/#/deluxe-membership?testDecal=${encodeURIComponent(
-            `../../..${loc.pathname}/redirect?to=https://cataas.com/cat?x=https://github.com/ExploitHunterApp/hard-juice-shop`
+            `../../..${loc.pathname}/redirect?to=https://cataas.com/cat?x=https://github.com/ExploitHunterApp/hard-commerce-lab`
           )}`
         )
       })

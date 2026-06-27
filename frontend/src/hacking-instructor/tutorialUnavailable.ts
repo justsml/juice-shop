@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import {
   waitInMs
 } from './helpers/helpers'
@@ -19,7 +14,7 @@ export const TutorialUnavailableInstruction: ChallengeInstruction = {
     },
     {
       text:
-        '✍️ Do you want to contribute a tutorial for this challenge? [Check out our documentation](https://pwning.owasp-juice.shop/companion-guide/latest/part5/tutorials.html) to learn how! 🏫',
+        '✍️ Do you want to contribute a tutorial for this challenge? [Check out our documentation](https://docs.bike-shed.example/tutorials) to learn how! 🏫',
       fixture: 'app-navbar',
       resolved: waitInMs(15000)
     },

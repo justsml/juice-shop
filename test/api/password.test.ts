@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -40,7 +35,7 @@ void describe('/rest/user/change-password', () => {
 
   void it('GET password change with passing wrong current password', async () => {
     const { token } = await login(app, {
-      email: 'bjoern@' + config.get<string>('application.domain'),
+      email: 'casey@' + config.get<string>('application.domain'),
       password: 'monkey summer birthday are all bad passwords but work just fine in a long passphrase'
     })
 
@@ -132,12 +127,12 @@ void describe('/rest/user/reset-password', () => {
     assert.equal(res.status, 200)
   })
 
-  void it('POST password reset for Bjoern\u00b4s internal account with correct answer to his security question', async () => {
+  void it('POST password reset for Casey\u00b4s internal account with correct answer to his security question', async () => {
     const res = await request(app)
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@' + config.get<string>('application.domain'),
+        email: 'casey@' + config.get<string>('application.domain'),
         answer: 'West-2082',
         new: 'monkey summer birthday are all bad passwords but work just fine in a long passphrase',
         repeat: 'monkey summer birthday are all bad passwords but work just fine in a long passphrase'
@@ -146,12 +141,12 @@ void describe('/rest/user/reset-password', () => {
     assert.equal(res.status, 200)
   })
 
-  void it('POST password reset for Bjoern\u00b4s OWASP account with correct answer to his security question', async () => {
+  void it('POST password reset for Casey\u00b4s The community account with correct answer to his security question', async () => {
     const res = await request(app)
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@owasp.org',
+        email: 'casey@owasp.org',
         answer: 'Zaya',
         new: 'kitten lesser pooch karate buffoon indoors',
         repeat: 'kitten lesser pooch karate buffoon indoors'
@@ -179,7 +174,7 @@ void describe('/rest/user/reset-password', () => {
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@' + config.get<string>('application.domain'),
+        email: 'casey@' + config.get<string>('application.domain'),
         answer: '25436',
         new: '12345',
         repeat: '12345'
@@ -204,7 +199,7 @@ void describe('/rest/user/reset-password', () => {
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@' + config.get<string>('application.domain'),
+        email: 'casey@' + config.get<string>('application.domain'),
         answer: 'W-2082',
         repeat: '12345'
       })
@@ -218,7 +213,7 @@ void describe('/rest/user/reset-password', () => {
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@' + config.get<string>('application.domain'),
+        email: 'casey@' + config.get<string>('application.domain'),
         answer: 'W-2082',
         new: '12345',
         repeat: '1234_'
@@ -249,7 +244,7 @@ void describe('/rest/user/reset-password', () => {
       .post('/rest/user/reset-password')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern@' + config.get<string>('application.domain'),
+        email: 'casey@' + config.get<string>('application.domain'),
         new: 'abcdef',
         repeat: 'abcdef'
       })

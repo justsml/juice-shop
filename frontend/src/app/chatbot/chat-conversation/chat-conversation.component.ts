@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, ChangeDetectionStrategy, signal, viewChild, ElementRef, afterNextRender, inject, Injector, runInInjectionContext, OnInit } from '@angular/core'
 import { ActivatedRoute, Router, RouterLink } from '@angular/router'
 import { MatIconModule } from '@angular/material/icon'
@@ -47,8 +42,8 @@ export class ChatConversationComponent implements OnInit {
   showToolCalls = signal(false)
   isToolCallsCollapsed = signal(true)
   messageInput = signal('')
-  chatBotName = signal('Juicy')
-  chatBotAvatar = signal('assets/public/images/JuicyBot.png')
+  chatBotName = signal('Yak AI')
+  chatBotAvatar = signal('assets/public/images/ChatbotAvatar.svg')
 
   private conversationId = ''
 

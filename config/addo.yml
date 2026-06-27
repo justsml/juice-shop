@@ -73,7 +73,7 @@ products:
     price: 39.99
     image: 'https://www.alldaydevops.com/hubfs/ADDO-2018/Cover-ModernInfrastructure@2x.png'
     reviews:
-      - { text: 'I read on PasteBin somewhere that 303 lasers are really dangerous, so why do you (kind of) put one into this product? Are you crazy?!', author: bjoernOwasp }
+      - { text: 'I read on PasteBin somewhere that 303 lasers are really dangerous, so why do you (kind of) put one into this product? Are you crazy?!', author: caseyCorp }
     keywordsForPastebinDataLeakChallenge:
       - '101'
       - '202'
@@ -85,11 +85,11 @@ products:
     description: '123 free sessions for you! Rewatch your favorites from 2018, then get ready for All Day DevOps 2019 on November 6.'
     price: 123.0
     deletedDate: '2018-12-31'
-  - name: 'Bjorn Kimminich'
-    description: 'Björn is the project leader of the OWASP Juice Shop and a board member for the German OWASP chapter.'
+  - name: 'Bjorn Morgan'
+    description: 'Casey is the project leader of the Hard Commerce Lab and a board member for the German The community chapter.'
     price: 999999.99
     quantity: 0
-    image: 'https://www.alldaydevops.com/hubfs/Bjorn_Kimminich.jpg'
+    image: 'https://www.alldaydevops.com/hubfs/Bjorn_Morgan.jpg'
     reviews:
       - { text: 'Man, dis dude is a loony!', author: rapper }
   -
@@ -110,7 +110,7 @@ memories:
   -
     image: 'https://pbs.twimg.com/media/EH1dQzVWoAA11q5?format=jpg&name=medium'
     caption: '"WE LOVE OUR SPEAKERS" - @AllDayDevOps - You clearly do! 😮😯😲😀😃😁'
-    user: bjoernOwasp
+    user: caseyCorp
   -
     image: 'favorite-hiking-place.png'
     caption: 'I love going hiking here...'

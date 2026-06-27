@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -236,7 +231,7 @@ void describe('/api/Users/:id', () => {
 void describe('/rest/user/whoami', () => {
   void it('GET own user id and email on who-am-i request', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)
@@ -246,7 +241,7 @@ void describe('/rest/user/whoami', () => {
     assert.ok(res.headers['content-type']?.includes('application/json'))
     assert.equal(typeof res.body.user.id, 'number')
     assert.equal(typeof res.body.user.email, 'string')
-    assert.equal(res.body.user.email, 'bjoern.kimminich@gmail.com')
+    assert.equal(res.body.user.email, 'casey.kimminich@gmail.com')
   })
 
   void it('GET who-am-i request returns nothing on missing auth token', async () => {
@@ -285,7 +280,7 @@ void describe('/rest/user/whoami', () => {
 
   void it('GET who-am-i with fields parameter returns only requested fields', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)
@@ -295,12 +290,12 @@ void describe('/rest/user/whoami', () => {
     assert.ok(res.headers['content-type']?.includes('application/json'))
     assert.equal(typeof res.body.user.id, 'number')
     assert.equal(typeof res.body.user.email, 'string')
-    assert.equal(res.body.user.email, 'bjoern.kimminich@gmail.com')
+    assert.equal(res.body.user.email, 'casey.kimminich@gmail.com')
   })
 
   void it('GET who-am-i with fields parameter does not return password by default', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)
@@ -314,7 +309,7 @@ void describe('/rest/user/whoami', () => {
 
   void it('GET who-am-i with fields parameter can be tricked into returning password', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)

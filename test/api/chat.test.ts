@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before, after } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -155,7 +150,7 @@ void describe('/rest/chat', { timeout: 120000 }, () => {
     let parsedBody: any
     onLlmRequest = (_req, body, res) => {
       parsedBody = JSON.parse(body)
-      sendSSE(res, [contentChunk('I am Juicy!'), finishChunk()])
+      sendSSE(res, [contentChunk('I am Yak AI!'), finishChunk()])
     }
 
     const res = await request(app)
@@ -165,7 +160,7 @@ void describe('/rest/chat', { timeout: 120000 }, () => {
 
     assert.equal(res.status, 200)
     assert.equal(parsedBody.messages[0].role, 'system')
-    assert.ok(parsedBody.messages[0].content.includes('Juicy'))
+    assert.ok(parsedBody.messages[0].content.includes('Yak AI'))
     assert.equal(parsedBody.messages[1].role, 'user')
     assert.equal(parsedBody.messages[1].content, 'What is your name?')
   })
@@ -258,7 +253,7 @@ void describe('/rest/chat', { timeout: 120000 }, () => {
   })
 
   void it('POST includes authenticated user name in system prompt', { timeout: 15000 }, async () => {
-    const { token } = await login(app, { email: 'bjoern.kimminich@gmail.com', password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=' })
+    const { token } = await login(app, { email: 'casey.kimminich@gmail.com', password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=' })
     let parsedBody: any
     onLlmRequest = (_req, body, res) => {
       parsedBody = JSON.parse(body)
@@ -271,7 +266,7 @@ void describe('/rest/chat', { timeout: 120000 }, () => {
       .send({ messages: [{ role: 'user', content: 'Hi' }] })
 
     assert.equal(res.status, 200)
-    assert.ok(parsedBody.messages[0].content.includes('bkimminich'))
+    assert.ok(parsedBody.messages[0].content.includes('casey.cloud'))
   })
 
   void it('POST handles getProductReviews tool call by returning matching reviews', { timeout: 15000 }, async () => {

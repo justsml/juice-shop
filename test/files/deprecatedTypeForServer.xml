@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+  ~ Copyright (c) 2014-2026 Casey Morgan & the OWASP Juice Shop contributors.
   ~ SPDX-License-Identifier: MIT
   -->
 
@@ -9,13 +9,13 @@
     <metadata>
         <name>Apple Juice</name>
         <trader>
-            <name>B. Kimminich</name>
+            <name>B. Morgan</name>
         </trader>
         <units>1500</units>
         <price>106</price>
         <name>Lemon Juice</name>
         <trader>
-            <name>B. Kimminich</name>
+            <name>B. Morgan</name>
         </trader>
         <units>4500</units>
         <price>195</price>

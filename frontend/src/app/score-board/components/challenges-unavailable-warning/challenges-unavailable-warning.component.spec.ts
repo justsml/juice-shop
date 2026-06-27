@@ -12,7 +12,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
         {
             category: 'foobar',
             name: 'my name',
-            mitigationUrl: 'https://owasp.example.com',
+            mitigationUrl: 'https://bike-shed.example',
             hasCodingChallenge: true,
             description: 'lorem ipsum',
             tagList: ['Easy'],
@@ -21,7 +21,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
         {
             category: 'foobar',
             name: 'my name two',
-            mitigationUrl: 'https://owasp.example.com',
+            mitigationUrl: 'https://bike-shed.example',
             hasCodingChallenge: true,
             description: 'lorem ipsum',
             tagList: ['Easy'],
@@ -54,7 +54,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
             {
                 category: 'foobar',
                 name: 'my name',
-                mitigationUrl: 'https://owasp.example.com',
+                mitigationUrl: 'https://bike-shed.example',
                 hasCodingChallenge: true,
                 description: 'lorem ipsum',
                 tagList: ['Easy'],
@@ -71,7 +71,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
             {
                 category: 'foobar',
                 name: 'my name',
-                mitigationUrl: 'https://owasp.example.com',
+                mitigationUrl: 'https://bike-shed.example',
                 hasCodingChallenge: true,
                 description: 'lorem ipsum',
                 tagList: ['Easy'],
@@ -80,7 +80,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
             {
                 category: 'foobar',
                 name: 'my name two',
-                mitigationUrl: 'https://owasp.example.com',
+                mitigationUrl: 'https://bike-shed.example',
                 hasCodingChallenge: true,
                 description: 'lorem ipsum',
                 tagList: ['Easy'],

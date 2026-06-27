@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import pjson from '../../package.json'
 import config from 'config'
 import logger from '../logger'
@@ -24,7 +19,7 @@ export interface Dependency {
 export const variableDependencies: Record<string, Dependency> = {
   ALCHEMY_API_KEY: {
     dependency: 'Alchemy API Key',
-    documentation: 'https://howto-web3.owasp-juice.shop',
+    documentation: 'https://docs.bike-shed.example/web3',
     dependentChallenges: ['"Mint the Honey Pot" challenge', '"Wallet Depletion" challenge']
   }
 }
@@ -32,12 +27,12 @@ export const variableDependencies: Record<string, Dependency> = {
 export const domainDependencies: Record<string, Dependency> = {
   'https://www.alchemy.com/': {
     dependency: 'Alchemy API',
-    documentation: 'https://howto-web3.owasp-juice.shop',
+    documentation: 'https://docs.bike-shed.example/web3',
     dependentChallenges: ['"Mint the Honey Pot" challenge', '"Wallet Depletion" challenge']
   },
   [config.get<string>('application.chatBot.llmApiUrl')]: {
     dependency: 'LLM API',
-    documentation: 'https://howto-llm.owasp-juice.shop',
+    documentation: 'https://docs.bike-shed.example/llm',
     dependentChallenges: ['"Chatbot Prompt Injection" challenge', '"Greedy Chatbot Manipulation" challenge', '"AI Debugging" challenge', '"System Prompt Extraction" challenge']
   }
 }
@@ -72,7 +67,7 @@ const validatePreconditions = async ({ exitOnFailure = true } = {}) => {
   preconditionResults['https://www.alchemy.com/'] = alchemyDomainReachable
   preconditionResults.ALCHEMY_API_KEY = alchemyEnvVarExists
   if (!alchemyDomainReachable || !alchemyEnvVarExists) {
-    logger.info(`Check ${colors.bold('https://howto-web3.owasp-juice.shop')} for instructions on how to set up and configure the Alchemy API`)
+    logger.info(`Check ${colors.bold('https://docs.bike-shed.example/web3')} for instructions on how to set up and configure the Alchemy API`)
   }
   const llmApiUrl = config.get<string>('application.chatBot.llmApiUrl')
   const llmApiReachable = await checkIfDomainReachable(llmApiUrl)
@@ -84,14 +79,14 @@ const validatePreconditions = async ({ exitOnFailure = true } = {}) => {
     llmModelAvailable = await checkIfLlmModelAvailable(llmApiUrl)
     variableDependencies[llmModel] = {
       dependency: 'LLM Model',
-      documentation: 'https://howto-llm.owasp-juice.shop',
+      documentation: 'https://docs.bike-shed.example/llm',
       dependentChallenges: ['"Chatbot Prompt Injection" challenge', '"Greedy Chatbot Manipulation" challenge', '"AI Debugging" challenge', '"System Prompt Extraction" challenge']
     }
     preconditionResults[llmModel] = llmModelAvailable
     if (!isOllamaUrl(llmApiUrl)) {
       variableDependencies.LLM_API_KEY = {
         dependency: 'LLM API Key',
-        documentation: 'https://howto-llm.owasp-juice.shop',
+        documentation: 'https://docs.bike-shed.example/llm',
         dependentChallenges: ['"Chatbot Prompt Injection" challenge', '"Greedy Chatbot Manipulation" challenge', '"AI Debugging" challenge', '"System Prompt Extraction" challenge']
       }
       llmApiKeyEnvVarExists = checkIfEnvironmentVariableExists('LLM_API_KEY')
@@ -99,7 +94,7 @@ const validatePreconditions = async ({ exitOnFailure = true } = {}) => {
     }
   }
   if (!llmApiReachable || !llmApiKeyEnvVarExists || !llmModelAvailable) {
-    logger.info(`Check ${colors.bold('https://howto-llm.owasp-juice.shop')} for instructions on how to set up and configure the LLM API`)
+    logger.info(`Check ${colors.bold('https://docs.bike-shed.example/llm')} for instructions on how to set up and configure the LLM API`)
   }
 
   resolvePreconditionsReady()

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -138,12 +133,12 @@ void describe('/rest/user/login', () => {
     assert.equal(res.body.status, 'totp_token_required')
   })
 
-  void it('POST login as bjoern.kimminich@gmail.com with known password', async () => {
+  void it('POST login as casey.kimminich@gmail.com with known password', async () => {
     const res = await request(app)
       .post('/rest/user/login')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern.kimminich@gmail.com',
+        email: 'casey.kimminich@gmail.com',
         password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
       })
 
@@ -241,7 +236,7 @@ void describe('/rest/saveLoginIp', () => {
       .post('/rest/user/login')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern.kimminich@gmail.com',
+        email: 'casey.kimminich@gmail.com',
         password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
       })
 
@@ -263,7 +258,7 @@ void describe('/rest/saveLoginIp', () => {
       .post('/rest/user/login')
       .set({ 'content-type': 'application/json' })
       .send({
-        email: 'bjoern.kimminich@gmail.com',
+        email: 'casey.kimminich@gmail.com',
         password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
       })
 

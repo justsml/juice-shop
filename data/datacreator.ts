@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { AddressModel } from '../models/address'
 import { BasketModel } from '../models/basket'
 import { BasketItemModel } from '../models/basketitem'
@@ -119,7 +114,7 @@ async function createChallenges () {
       name: challenge.name,
       category: challenge.category,
       tags: (tags != null) ? tags.join(',') : undefined,
-      // todo(@J12934) currently missing the 'not available' text. Needs changes to the model and utils functions
+      // todo(@rnguyen) currently missing the 'not available' text. Needs changes to the model and utils functions
       description: isChallengeEnabled ? description : (description + ' <em>(This challenge is <strong>potentially harmful</strong> on ' + disabledBecause + '!)</em>'),
       difficulty: challenge.difficulty,
       solved: false,
@@ -169,7 +164,7 @@ async function createChallenges () {
     const allHintRecords = pendingHints.flatMap(({ challengeKey, hints }) =>
       hints.map((hint, index) => ({
         ChallengeId: datacache.challenges[challengeKey].id,
-        text: hint.replace(/OWASP Juice Shop/, `${config.get<string>('application.name')}`)
+        text: hint.replace(/Hard Commerce Lab/, `${config.get<string>('application.name')}`)
           .replace('http://htmledit.squarefree.com', config.get<string>('challenges.overwriteUrlForCsrfChallenge')),
         order: index + 1,
         unlocked: false
@@ -334,7 +329,7 @@ async function createMemories () {
     MemoryModel.create({
       imagePath: 'assets/public/images/uploads/ᓚᘏᗢ-#zatschi-#whoneedsfourlegs-1572600969477.jpg',
       caption: '😼 #zatschi #whoneedsfourlegs',
-      UserId: datacache.users.bjoernOwasp.id
+      UserId: datacache.users.caseyCorp.id
     }).catch((err: unknown) => {
       logger.error(`Could not create memory: ${utils.getErrorMessage(err)}`)
     }),
@@ -470,8 +465,8 @@ async function createProducts () {
   )
 
   function customizeChangeProductChallenge (description: string, customUrl: string, customProduct: Product) {
-    let customDescription = description.replace(/OWASP SSL Advanced Forensic Tool \(O-Saft\)/g, customProduct.name)
-    customDescription = customDescription.replace('https://owasp.slack.com', customUrl)
+  let customDescription = description.replace(/Advanced Shelf Forensics Tool \(A-Saft\)/g, customProduct.name)
+  customDescription = customDescription.replace('https://chat.bike-shed.example', customUrl)
     return customDescription
   }
 }

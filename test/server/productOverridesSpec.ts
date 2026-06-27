@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import chai from 'chai'
 import {
   applyProductOverrides,
@@ -10,7 +5,7 @@ import {
   parseProductNameOverrides,
   parseProductOverrides
 } from '../../data/datacreator'
-import type { Product } from '../../lib/config.types'
+import type { Product } from '../../lib/config.schema'
 
 const expect = chai.expect
 

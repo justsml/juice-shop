@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -110,7 +105,7 @@ void describe('/api/Baskets/:id', () => {
 void describe('/rest/basket/:id', () => {
   void it('GET existing basket of another user', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)
@@ -167,7 +162,7 @@ void describe('/rest/basket/:id/checkout', () => {
 
   void describe('error cases', () => {
     void it('should return 500 if QuantityModel.findOne fails during checkout', async (t) => {
-      const { token } = await login(app, { email: 'bjoern.kimminich@gmail.com', password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=' })
+      const { token } = await login(app, { email: 'casey.kimminich@gmail.com', password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=' })
       const authHeader = { Authorization: 'Bearer ' + token, 'content-type': 'application/json' }
       await request(app).post('/api/BasketItems').set(authHeader).send({ BasketId: 4, ProductId: 1, quantity: 1 })
 

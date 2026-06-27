@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="Hard Commerce Lab">
+  <rect width="320" height="120" rx="18" fill="#123456"/>
+  <path d="M54 82h212l-18-43H72z" fill="#ffcc00"/>
+  <path d="M82 39h156l-12-22H94z" fill="#f8fafc"/>
+  <circle cx="104" cy="86" r="12" fill="#f8fafc"/>
+  <circle cx="216" cy="86" r="12" fill="#f8fafc"/>
+  <text x="160" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#123456">HARD CART</text>
+</svg>

@@ -1,8 +1,3 @@
-<!--
-  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
-  ~ SPDX-License-Identifier: MIT
-  -->
-
 <mat-card appearance="outlined">
   <div class="mdc-card container">
     <div class="whitepaper-container offer-container align-self-center">
@@ -10,7 +5,7 @@
         <mat-card-title>
           {{'TITLE_TOKENSALE' | translate}}
         </mat-card-title>
-        <mat-card-subtitle [innerHtml]="'SECTION_ICO' | translate:{juicycoin: altcoinName}"></mat-card-subtitle>
+        <mat-card-subtitle [innerHtml]="'SECTION_ICO' | translate:{deskcoin: altcoinName}"></mat-card-subtitle>
       </mat-card-header>
       <div class="divider"></div>
       <mat-card appearance="outlined" class="mat-elevation-z6">
@@ -93,7 +88,7 @@
 
       <mat-card appearance="outlined" class="mat-elevation-z6">
         <div class="mdc-card">  
-          <h5><i class='fas fa-comments fa-2x'></i> <span class="faq-question-label" [innerHtml]="'ICO_FAQ_QUESTION' | translate:{juicycoin: altcoinName}"></span></h5>
+          <h5><i class='fas fa-comments fa-2x'></i> <span class="faq-question-label" [innerHtml]="'ICO_FAQ_QUESTION' | translate:{deskcoin: altcoinName}"></span></h5>
           <small class="text-justify">{{"ICO_FAQ_ANSWER" | translate}}</small>
         </div>
       </mat-card>

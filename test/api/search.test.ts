@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -110,9 +105,9 @@ void describe('/rest/products/search', () => {
     assert.ok(benderMatch, 'Expected bender user in UNION SELECT results')
 
     const bjoernMatch = res.body.data.find((item: any) =>
-      item.id === 4 && item.price === 'bjoern.kimminich@gmail.com' && item.deluxePrice === security.hash('bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=')
+      item.id === 4 && item.price === 'casey.kimminich@gmail.com' && item.deluxePrice === security.hash('bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=')
     )
-    assert.ok(bjoernMatch, 'Expected bjoern user in UNION SELECT results')
+    assert.ok(bjoernMatch, 'Expected casey user in UNION SELECT results')
 
     const cisoMatch = res.body.data.find((item: any) =>
       item.id === 5 && item.price === `ciso@${config.get<string>('application.domain')}` && item.deluxePrice === security.hash('mDLx?94T~1CfVfZMzw@sJ9f?s3L6lbMqE70FfI8^54jbNikY5fymx7c!YbJb')

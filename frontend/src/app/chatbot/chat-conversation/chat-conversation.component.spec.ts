@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
 import { ActivatedRoute } from '@angular/router'
@@ -40,7 +35,7 @@ describe('ChatConversationComponent', () => {
         configurationService = {
             getApplicationConfiguration: vi.fn().mockName("ConfigurationService.getApplicationConfiguration")
         }
-        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { chatBot: { name: 'Juicy', avatar: 'JuicyBot.png' } } } as any))
+        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { chatBot: { name: 'Yak AI', avatar: 'ChatbotAvatar.svg' } } } as any))
         userService = {
             whoAmI: vi.fn().mockName("UserService.whoAmI")
         }
@@ -234,7 +229,7 @@ describe('ChatConversationComponent', () => {
             expect(back).toBeTruthy()
             expect(back.getAttribute('aria-label')).toBe('Back to chatbot')
             expect(compiled.querySelector('img.header-avatar')).toBeTruthy()
-            expect(compiled.querySelector('.header-title')?.textContent).toContain('Juicy')
+            expect(compiled.querySelector('.header-title')?.textContent).toContain('Yak AI')
         })
 
         it('should render an empty chat window and the input area when there are no messages', () => {
@@ -344,11 +339,11 @@ describe('ChatConversationComponent', () => {
 
         it('should keep default bot name and avatar when config has no chatBot section', () => {
             configurationService.getApplicationConfiguration.mockReturnValue(of({ application: {} } as any))
-            component.chatBotName.set('Juicy')
-            component.chatBotAvatar.set('assets/public/images/JuicyBot.png')
+            component.chatBotName.set('Yak AI')
+            component.chatBotAvatar.set('assets/public/images/ChatbotAvatar.svg')
             component.ngOnInit()
-            expect(component.chatBotName()).toBe('Juicy')
-            expect(component.chatBotAvatar()).toBe('assets/public/images/JuicyBot.png')
+            expect(component.chatBotName()).toBe('Yak AI')
+            expect(component.chatBotAvatar()).toBe('assets/public/images/ChatbotAvatar.svg')
         })
 
         it('should mark an assistant error message via the stream and break out of the loop', async () => {

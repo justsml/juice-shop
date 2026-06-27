@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { AddressModelInit } from './address'
 import { BasketModelInit } from './basket'
 import { BasketItemModelInit } from './basketitem'
@@ -38,7 +33,7 @@ function createSequelize (options?: { inMemory?: boolean }) {
       max: 5
     },
     transactionType: Transaction.TYPES.IMMEDIATE,
-    storage: options?.inMemory ? ':memory:' : 'data/juiceshop.sqlite',
+    storage: options?.inMemory ? ':memory:' : 'data/hard-commerce.sqlite',
     logging: false
   })
 }

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -113,7 +108,7 @@ void describe('/api/Feedbacks', () => {
 
   void it('POST feedback is associated with current user', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
 
@@ -139,7 +134,7 @@ void describe('/api/Feedbacks', () => {
 
   void it('POST feedback is associated with any passed user ID', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
 

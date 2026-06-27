@@ -846,29 +846,48 @@
 	},
 	"nftUnlockChallenge_1.sol": {
 		"added": [
+			8,
+			13,
 			27
 		],
 		"removed": [
+			8,
+			13,
 			27
 		]
 	},
 	"nftUnlockChallenge_2_correct.sol": {
-		"added": [],
-		"removed": []
+		"added": [
+			8,
+			13
+		],
+		"removed": [
+			8,
+			13
+		]
 	},
 	"nftUnlockChallenge_3.sol": {
 		"added": [
+			8,
+			13,
 			15
 		],
 		"removed": [
+			8,
+			13,
 			15
 		]
 	},
 	"nftUnlockChallenge_4.sol": {
 		"added": [
+			8,
+			13,
 			17
 		],
-		"removed": []
+		"removed": [
+			8,
+			13
+		]
 	},
 	"noSqlReviewsChallenge_1.ts": {
 		"added": [
@@ -903,16 +922,27 @@
 		]
 	},
 	"redirectChallenge_1.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"redirectChallenge_2.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"redirectChallenge_3.ts": {
-		"added": [],
+		"added": [
+			8
+		],
 		"removed": [
+			8,
 			18,
 			19,
 			20,
@@ -929,24 +959,44 @@
 		]
 	},
 	"redirectChallenge_4_correct.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"redirectCryptoCurrencyChallenge_1.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"redirectCryptoCurrencyChallenge_2.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"redirectCryptoCurrencyChallenge_3_correct.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			6
+		]
 	},
 	"redirectCryptoCurrencyChallenge_4.ts": {
-		"added": [],
-		"removed": []
+		"added": [
+			8
+		],
+		"removed": [
+			8
+		]
 	},
 	"registerAdminChallenge_1.ts": {
 		"added": [],
@@ -1022,7 +1072,7 @@
 		"added": [],
 		"removed": []
 	},
-	"resetPasswordBjoernChallenge_1_correct.yml": {
+	"resetPasswordCaseyChallenge_1_correct.yml": {
 		"added": [
 			1,
 			2,
@@ -1058,19 +1108,19 @@
 			4
 		]
 	},
-	"resetPasswordBjoernChallenge_2.yml": {
+	"resetPasswordCaseyChallenge_2.yml": {
 		"added": [],
 		"removed": []
 	},
-	"resetPasswordBjoernChallenge_3.yml": {
+	"resetPasswordCaseyChallenge_3.yml": {
 		"added": [],
 		"removed": []
 	},
-	"resetPasswordBjoernOwaspChallenge_1.yml": {
+	"resetPasswordCaseyCorpChallenge_1.yml": {
 		"added": [],
 		"removed": []
 	},
-	"resetPasswordBjoernOwaspChallenge_2_correct.yml": {
+	"resetPasswordCaseyCorpChallenge_2_correct.yml": {
 		"added": [
 			1,
 			2,
@@ -1106,7 +1156,7 @@
 			4
 		]
 	},
-	"resetPasswordBjoernOwaspChallenge_3.yml": {
+	"resetPasswordCaseyCorpChallenge_3.yml": {
 		"added": [],
 		"removed": []
 	},

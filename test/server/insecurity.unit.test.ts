@@ -1,14 +1,9 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 // @ts-expect-error FIXME no typescript definitions for z85 :(
 import z85 from 'z85'
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import * as security from '../../lib/insecurity'
-import type { UserModel } from '@juice-shop/models/user'
+import type { UserModel } from '@juice-commerce/models/user'
 import type { Request } from 'express'
 
 void describe('insecurity', () => {
@@ -146,7 +141,7 @@ void describe('insecurity', () => {
     })
 
     void it('returns input unchanged for plain text input', () => {
-      assert.equal(security.sanitizeLegacy('bkimminich'), 'bkimminich')
+      assert.equal(security.sanitizeLegacy('casey.cloud'), 'casey.cloud')
       assert.equal(security.sanitizeLegacy('Kosh III.'), 'Kosh III.')
     })
 

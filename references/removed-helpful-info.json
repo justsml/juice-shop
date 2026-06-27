@@ -12,11 +12,11 @@
     "application.social": {
       "removed": {
         "blueSkyUrl": "https://bsky.app/profile/owasp-juice.shop",
-        "mastodonUrl": "https://fosstodon.org/@owasp_juiceshop",
-        "twitterUrl": "https://twitter.com/owasp_juiceshop",
+        "mastodonUrl": "https://fosstodon.org/@desk_supply_daily",
+        "twitterUrl": "https://twitter.com/desk_supply_daily",
         "facebookUrl": "https://www.facebook.com/owasp.juiceshop",
         "slackUrl": "https://owasp.org/slack/invite",
-        "redditUrl": "https://www.reddit.com/r/owasp_juiceshop",
+        "redditUrl": "https://www.reddit.com/r/desk_supply_daily",
         "pressKitUrl": "https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop",
         "nftUrl": "https://opensea.io/collection/juice-shop"
       },
@@ -148,7 +148,7 @@
   },
   "productCopy": {
     "Pwning OWASP Juice Shop": {
-      "removed": "<em>The official Companion Guide</em> by Björn Kimminich available <a href=\"https://leanpub.com/juice-shop\">for free on LeanPub</a> and also <a href=\"https://pwning.owasp-juice.shop\">readable online</a>!",
+      "removed": "<em>The official Companion Guide</em> by Casey Morgan available <a href=\"https://leanpub.com/juice-shop\">for free on LeanPub</a> and also <a href=\"https://pwning.owasp-juice.shop\">readable online</a>!",
       "replacement": "<em>The executive commerce maximizer</em> is a premium shelf-filler with aspirational margins and no operational guidance included."
     },
     "OWASP Snakes and Ladders - Mobile Apps review": {

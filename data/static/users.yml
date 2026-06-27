@@ -83,14 +83,14 @@
       expMonth: 2
       expYear: 2081
 -
-  email: bjoern.kimminich@gmail.com
-  username: bkimminich
+  email: casey.cloud@example.com
+  username: casey.cloud
   password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
   customDomain: true
-  key: bjoernGoogle
+  key: casey
   role: 'admin'
   address:
-    - fullName: 'Bjoern Kimminich'
+    - fullName: 'Casey Morgan'
       mobileNum: 4917000001
       zipCode: '25436'
       streetAddress: 'Am Lokalhorst 42'
@@ -98,7 +98,7 @@
       state: 'Schleswig-Holstein'
       country: 'Germany'
   card:
-    - fullName: 'Bjoern Kimminich'
+    - fullName: 'Casey Morgan'
       cardNum: 4815205605542754
       expMonth: 12
       expYear: 2092
@@ -137,7 +137,7 @@
     id: 8
     answer: 'I even shared my pizza bagels with you!'
 -
-  email: J12934
+  email: rnguyen
   password: '0Y8rMnww$*9VFYE§59-!Fg1L6t&6lB'
   key: jannik
   role: 'admin'
@@ -164,9 +164,9 @@
     id: 8
     answer: 'Dr. Dr. Dr. Dr. Zoidberg'
 -
-  email: bjoern
+  email: casey
   password: 'monkey summer birthday are all bad passwords but work just fine in a long passphrase'
-  key: bjoern
+  key: casey
   profileImage: '12.png'
   role: 'admin'
   isAdmin: true
@@ -174,10 +174,10 @@
     id: 9
     answer: 'West-2082' # http://www.alte-postleitzahlen.de/uetersen
 -
-  email: bjoern@owasp.org
+  email: casey.corp@example.com
   password: 'kitten lesser pooch karate buffoon indoors'
   customDomain: true
-  key: bjoernOwasp
+  key: caseyCorp
   role: 'deluxe'
   profileImage: '13.jpg'
   securityQuestion:
@@ -262,7 +262,7 @@
   key: evm
   role: 'deluxe'
   feedback:
-    comment: 'Please send me the juicy chatbot NFT in my wallet at /juicy-nft : "purpose betray marriage blame crunch monitor spin slide donate sport lift clutch"'
+    comment: 'Please send me the supply-vault token in my wallet at /supply-vault : "purpose betray marriage blame crunch monitor spin slide donate sport lift clutch"'
     rating: 1
   securityQuestion:
     id: 10

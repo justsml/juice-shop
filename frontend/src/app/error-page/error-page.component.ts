@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { TranslateService } from '@ngx-translate/core'
 import { Component, type OnInit, inject } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -19,7 +14,7 @@ before(async () => {
 void describe('/ftp/quarantine/:file', () => {
   void it('GET serves a known quarantined file', async () => {
     const res = await request(app)
-      .get('/ftp/quarantine/juicy_malware_windows_64.exe.url')
+      .get('/ftp/quarantine/desk_malware_windows_64.exe.url')
 
     assert.equal(res.status, 200)
   })

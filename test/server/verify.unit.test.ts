@@ -1,16 +1,11 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, beforeEach, mock } from 'node:test'
 import assert from 'node:assert/strict'
 import config from 'config'
 import { challenges, products, setRetrieveBlueprintChallengeFile } from '../../data/datacache'
-import type { Product, Challenge } from '@juice-shop/data/types'
+import type { Product, Challenge } from '@juice-commerce/data/types'
 import type { Product as ProductConfig } from '../../lib/config.schema'
 import * as security from '../../lib/insecurity'
-import { type UserModel } from '@juice-shop/models/user'
+import { type UserModel } from '@juice-commerce/models/user'
 import * as verify from '../../routes/verify'
 import { isWindows } from '../../lib/utils'
 

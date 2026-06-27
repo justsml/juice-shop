@@ -1,9 +1,4 @@
 import type { Mock } from "vitest"
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { ResultState } from '../coding-challenge.types'
 import { handleVerdict } from './handle-verdict'
 import { of, throwError } from 'rxjs'

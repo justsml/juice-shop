@@ -1,4 +1,4 @@
-# vuln-code-snippet start resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
+# vuln-code-snippet start resetPasswordCaseyCorpChallenge resetPasswordCaseyChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
 - # vuln-code-snippet neutral-line resetPasswordJimChallenge
   question: 'Your eldest siblings middle name?' # vuln-code-snippet vuln-line resetPasswordJimChallenge
 -
@@ -11,12 +11,12 @@
   question: "Maternal grandmother's first name?"
 -
   question: "Paternal grandmother's first name?"
-- # vuln-code-snippet neutral-line resetPasswordBjoernOwaspChallenge
-  question: 'Name of your favorite pet?' # vuln-code-snippet vuln-line resetPasswordBjoernOwaspChallenge
+- # vuln-code-snippet neutral-line resetPasswordCaseyCorpChallenge
+  question: 'Name of your favorite pet?' # vuln-code-snippet vuln-line resetPasswordCaseyCorpChallenge
 -
   question: "Last name of dentist when you were a teenager? (Do not include 'Dr.')"
-- # vuln-code-snippet neutral-line resetPasswordBjoernChallenge
-  question: 'Your ZIP/postal code when you were a teenager?' # vuln-code-snippet vuln-line resetPasswordBjoernChallenge
+- # vuln-code-snippet neutral-line resetPasswordCaseyChallenge
+  question: 'Your ZIP/postal code when you were a teenager?' # vuln-code-snippet vuln-line resetPasswordCaseyChallenge
 - # vuln-code-snippet neutral-line resetPasswordBenderChallenge
   question: 'Company you first work for as an adult?' # vuln-code-snippet vuln-line resetPasswordBenderChallenge
 -
@@ -27,4 +27,4 @@
   question: 'Number of one of your customer or ID cards?'
 -
   question: "What's your favorite place to go hiking?"
-# vuln-code-snippet end resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
+# vuln-code-snippet end resetPasswordCaseyCorpChallenge resetPasswordCaseyChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge

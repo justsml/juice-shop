@@ -1,15 +1,16 @@
-# AI Agent Guidelines for OWASP Juice Shop
+# AI Agent Guidelines for Hard Commerce Lab
 
-This document is the **primary authoritative source** of context for all AI assistants (Claude, GitHub Copilot, Codeium, Continue.dev, Junie, etc.) contributing to OWASP Juice Shop. It provides comprehensive guidelines to maintain code quality, security, and adherence to project standards.
+This document is the **primary authoritative source** of context for all AI assistants contributing to Hard Commerce Lab.
+It provides comprehensive guidelines to maintain code quality, security, and de-identification standards.
 
 ## Project Overview
 
-- **Project**: OWASP Juice Shop - an intentionally insecure web application for security training
+- **Project**: Hard Commerce Lab - an intentionally insecure commerce application for security training
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js (22–25 with 24 being the default), Express, SQLite/Sequelize, MongoDB/MarsDB, Angular 21.x
 - **Testing**: Mocha/Chai/Sinon (server unit tests), Supertest (API integration), Vitest (frontend unit tests), Cypress (E2E tests)
 - **Code Style**: JS Standard Style (enforced via ESLint)
-- **Repository**: [ExploitHunterApp/hard-juice-shop](https://github.com/ExploitHunterApp/hard-juice-shop)
+- **Repository**: private or deployment-specific
 
 ## Key Files and Directories
 
@@ -37,7 +38,20 @@ This document is the **primary authoritative source** of context for all AI assi
 2. **Challenge Development**: Consult maintainers before creating new challenges. AI-generated challenges risk being duplicate, unsolvable, or dysfunctional.
 3. **Code Changes and RSN**: When modifying challenge-related code, the Refactoring Safety Net must pass.
 4. **Dependency Updates**: Verify compatibility with `package.json` and `frontend/package.json`.
-5. **Translation Modifications**: Use [Crowdin](https://crowdin.com/project/owasp-juice-shop), not direct file editing.
+5. **Translation Modifications**: Avoid direct translation dictionary rewrites except during a dedicated localization pass.
+6. **Hard Build De-Identification**: This fork must not reveal its upstream identity in runtime output, packaged assets, public docs, challenge text, screenshots, generated metadata, logs exposed to users, comments shipped to clients, HTTP headers, API responses, product/review data, or machine-readable manifests. Treat origin strings, personal names, copyright notices, repository URLs, social handles, badge URLs, distinctive filenames, and project-specific phrasing as adversary-facing signals unless they are confined to required legal files.
+
+## Hard Build De-Identification Rules
+
+The "hard" variant is intended to resist both human and machine fingerprinting. Any change touching public output must preserve ambiguity by default.
+
+- Do not add references to the upstream project name, upstream foundation, upstream authors, personal attribution lists, repository names, social accounts, project websites, merchandise, badges, copyright banners, SPDX comments, or other origin metadata to runtime-visible files or packaged output.
+- Keep legally required attribution in dedicated legal files only. Do not mirror it in README marketing copy, frontend comments, API payloads, static assets, screenshots, generated bundles, packaged docs, or user-visible dialogs unless maintainers explicitly approve.
+- Prefer generic labels and deployment-specific environment overrides over hard-coded text. Existing override mechanisms include `APPLICATION_NAME`, `APPLICATION_LOGO`, `APPLICATION_FAVICON`, `APPLICATION_THEME`, `APPLICATION_DOMAIN`, `APPLICATION_PRIVACY_CONTACT_EMAIL`, `APPLICATION_TRANSLATION_OVERRIDES`, `APPLICATION_CSS_VARIABLES`, `PRODUCT_OVERRIDES`, `PRODUCT_NAME_OVERRIDES`, and `PRODUCT_IMAGE_OVERRIDES`.
+- When adding new public strings, assets, routes, headers, metrics, or config values, add an environment-injected override when practical. Defaults must be neutral and should avoid memorable upstream wording.
+- Randomize invisible structure when it does not change user-facing behavior or test determinism: ordering of non-semantic markup, generated IDs/classes, seeded product/review variants, and optional decoy copy are acceptable places to add deployment-specific variation.
+- Before submitting public-surface changes, run `pnpm run check:identity-leaks` and manually review any matches. Extend the scanner when new leak classes are discovered.
+- Do not edit translation files directly. Use runtime translation overrides for de-identification unless maintainers approve a broader localization strategy.
 
 ## Recommended Use Cases
 
@@ -153,8 +167,8 @@ Ask the AI to:
 ❌ **Don't**: Use AI for contribution farming or trivial changes.
 ✅ **Do**: Make meaningful contributions that add value.
 
-❌ **Don't**: Let AI modify translations directly.
-✅ **Do**: Use [Crowdin](https://crowdin.com/project/owasp-juice-shop) for translations.
+❌ **Don't**: Let AI modify translations directly during unrelated work.
+✅ **Do**: Keep translation rewrites for a dedicated localization pass.
 
 ## Example: Implementing a Bug Fix
 
@@ -196,7 +210,7 @@ pnpm run rsn
 
 - **Authoritative Guide**: [AGENTS.md](./AGENTS.md)
 - **Contribution Guidelines**: [CONTRIBUTING.md](./CONTRIBUTING.md)
-- **Project Documentation**: [pwning.owasp-juice.shop](https://pwning.owasp-juice.shop/)
+- **Project Documentation**: keep deployment-specific notes private or neutralized
 - **Community**: GitHub issues and discussions.
 
 ## Skills

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -152,7 +147,7 @@ void describe('/rest/2fa/status', () => {
 
   void it('GET should indicate 2fa is not setup for users with 2fa disabled', async () => {
     const { token } = await login(app, {
-      email: `J12934@${config.get<string>('application.domain')}`,
+      email: `rnguyen@${config.get<string>('application.domain')}`,
       password: '0Y8rMnww$*9VFYE§59-!Fg1L6t&6lB'
     })
 
@@ -165,7 +160,7 @@ void describe('/rest/2fa/status', () => {
     assert.equal(typeof res.body.email, 'string')
     assert.equal(typeof res.body.setupToken, 'string')
     assert.equal(res.body.setup, false)
-    assert.equal(res.body.email, `J12934@${config.get<string>('application.domain')}`)
+    assert.equal(res.body.email, `rnguyen@${config.get<string>('application.domain')}`)
   })
 
   void it('GET should return 401 when not logged in', async () => {

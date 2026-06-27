@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { ProductService } from '../Services/product.service'
 import { type AfterViewInit, Component, type OnDestroy, ViewChild, inject } from '@angular/core'
 import { MatPaginator } from '@angular/material/paginator'

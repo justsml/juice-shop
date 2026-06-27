@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { PasswordStrengthComponent } from './password-strength.component'

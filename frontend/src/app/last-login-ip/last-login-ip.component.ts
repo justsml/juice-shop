@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, inject, OnInit } from '@angular/core'
 import { DomSanitizer } from '@angular/platform-browser'
 import { jwtDecode } from 'jwt-decode'

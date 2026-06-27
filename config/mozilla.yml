@@ -136,7 +136,7 @@ products:
     name: 'Colour Contrast Analyser Firefox Extension'
     description: 'The Colour Contrast Analyser Firefox extension lists colour combinations used in the document in a table that summarises the foreground colour, background colour, luminosity contrast ratio, and the colour difference and brightness difference used in the algorithm suggested in the 26th of April 2000 working draft for Accessibility Evaluation and Repair Tools (AERT). Each element is also listed with its parent elements, and class and id attribute values when specified to make it easier to locate the elements. <br/><span style="color:red;">This extension has been removed because side-effects with other plugins.</span>'
     price: 0.99
-    image: 'http://juicystudio.com/img/logo.gif'
+    image: 'office_supply.svg'
     keywordsForPastebinDataLeakChallenge:
       - juicenote
       - magische firefox suche
@@ -158,11 +158,11 @@ products:
     name: 'Mozilla Horizontal T-Shirt'
     price: 5.94
   -
-    name: 'OWASP Zed Attack Proxy (ZAP)'
+    name: 'Desk Audit Proxy'
     description: 'ZAP is one of the world’s most popular free security tools and can help you automatically find security vulnerabilities while you are developing and testing your applications.'
     price: 0.01
     image: zap.png
-    urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'
+    urlForProductTamperingChallenge: 'https://www.hardcommerce.org/index.php/The community_Zed_Attack_Proxy_Project'
   -
     name: 'Christmas Super-Surprise-Box (2014 Edition)'
     description: 'Contains a random selection of stickers and three Unisex t-shirts (3XL) for an unbeatable price!'
@@ -178,8 +178,8 @@ products:
     exifForBlueprintChallenge:
       - ~
   -
-    name: 'Global OWASP WASPY Award 2017 Nomination'
-    description: 'Your chance to nominate up to three quiet pillars of the OWASP community ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
+    name: 'Golden Desk Award Nomination'
+    description: 'Your chance to nominate up to three quiet pillars of the office community ends 2017-06-30! <a href="https://www.hardcommerce.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
     price: 0.03
     image: waspy.png
     deletedDate: '2017-07-01'

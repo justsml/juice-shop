@@ -1,13 +1,8 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, beforeEach, mock } from 'node:test'
 import assert from 'node:assert/strict'
 import { retrieveLoggedInUser } from '../../routes/currentUser'
 import { authenticatedUsers } from '../../lib/insecurity'
-import type { UserModel } from '@juice-shop/models/user'
+import type { UserModel } from '@juice-commerce/models/user'
 
 void describe('currentUser', () => {
   let req: any

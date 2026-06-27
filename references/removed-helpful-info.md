@@ -19,11 +19,11 @@ The following default config values were removed or disabled from `config/defaul
 ## Removed Social And Support URLs
 
 - BlueSky: `https://bsky.app/profile/owasp-juice.shop`
-- Mastodon: `https://fosstodon.org/@owasp_juiceshop`
-- Twitter: `https://twitter.com/owasp_juiceshop`
+- Mastodon: `https://fosstodon.org/@desk_supply_daily`
+- Twitter: `https://twitter.com/desk_supply_daily`
 - Facebook: `https://www.facebook.com/owasp.juiceshop`
 - Slack: `https://owasp.org/slack/invite`
-- Reddit: `https://www.reddit.com/r/owasp_juiceshop`
+- Reddit: `https://www.reddit.com/r/desk_supply_daily`
 - Press kit: `https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop`
 - NFT collection: `https://opensea.io/collection/juice-shop`
 

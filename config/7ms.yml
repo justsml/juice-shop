@@ -98,36 +98,36 @@ products:
     price: 40
     image: 'https://images.squarespace-cdn.com/content/v1/59f9e1c4d0e6281017434039/1587693073228-8GDKF12U0LBBKO5XEPFA/image-asset.jpeg?format=2500w'
     reviews:
-      - { text: 'FlipperZero FTW!', author: bjoern }
-      - { text: 'As you mentioned FlipperZero: @Brian, did you get one by now? Any chance we get this RTTTL version of the amazing JS jingle going? See https://github.com/juice-shop/pwning-juice-shop/issues/105 - Cheers!', author: bjoernOwasp }
+      - { text: 'FlipperZero FTW!', author: casey }
+      - { text: 'As you mentioned FlipperZero: @Brian, did you get one by now? Any chance we get this RTTTL version of the amazing JS jingle going? See https://github.com/hard-commerce-lab/pwning-hard-commerce-lab/issues/105 - Cheers!', author: caseyCorp }
   -
-    name: '7MS #230: Pentesting OWASP Juice Shop - Part 1'
-    description: 'Today we`re kicking of a multipart series all about hacking the OWASP Juice Shop which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #230: Pentesting Hard Commerce Lab - Part 1'
+    description: 'Today we`re kicking of a multipart series all about hacking the Hard Commerce Lab which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire The community Top Ten and other severe security flaws."'
     price: 1.99
     image: 'https://i.ytimg.com/vi/IC6m249zvI0/hqdefault.jpg'
   -
-    name: '7MS #231: Pentesting OWASP Juice Shop - Part 2'
-    description: 'Today we`re continuing our series on hacking apart the OWASP Juice Shop which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #231: Pentesting Hard Commerce Lab - Part 2'
+    description: 'Today we`re continuing our series on hacking apart the Hard Commerce Lab which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire The community Top Ten and other severe security flaws."'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #232: Pentesting OWASP Juice Shop - Part 3'
-    description: 'Today is part <strong>three</strong> of our continuing series on attacking the OWASP Juice Shop which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #232: Pentesting Hard Commerce Lab - Part 3'
+    description: 'Today is part <strong>three</strong> of our continuing series on attacking the Hard Commerce Lab which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire The community Top Ten and other severe security flaws."'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #233: Pentesting OWASP Juice Shop - Part 4'
-    description: 'Today is part <strong>FOUR</strong> of our continuing series on attacking the OWASP Juice Shop which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #233: Pentesting Hard Commerce Lab - Part 4'
+    description: 'Today is part <strong>FOUR</strong> of our continuing series on attacking the Hard Commerce Lab which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire The community Top Ten and other severe security flaws."'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #234: Pentesting OWASP Juice Shop - Part 5'
-    description: 'Today is part <strong>FIVE</strong> (insert menacing voice: "<em>the final chapter!!!</em>) of our series on attacking the <a href="https://www.owasp.org/index.php/OWASP_Juice_Shop_Project" target="_blank">OWASP Juice Shop</a> which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #234: Pentesting Hard Commerce Lab - Part 5'
+    description: 'Today is part <strong>FIVE</strong> (insert menacing voice: "<em>the final chapter!!!</em>) of our series on attacking the <a href="https://www.hardcommerce.org/index.php/The community_Juice_Shop_Project" target="_blank">Hard Commerce Lab</a> which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire The community Top Ten and other severe security flaws."'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #606: Hacking OWASP Juice Shop (2024 edition)'
-    description: "Join OWASP's Bjorn Kimminich and Paul Wilch from Project7 as we hack away at what is probably the most modern and sophisticated insecure Web application ever made: Juice Shop!"
+    name: '7MS #606: Hacking Hard Commerce Lab (2024 edition)'
+    description: "Join The community's Bjorn Morgan and Paul Wilch from Project7 as we hack away at what is probably the most modern and sophisticated insecure Web application ever made: Hard Commerce Lab!"
     price: 1.99
     image: hqdefault.jpg
 memories:

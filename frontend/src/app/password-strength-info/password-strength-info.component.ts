@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, Input, OnInit } from '@angular/core'
 import { PasswordStrengthComponent } from '../password-strength/password-strength.component'
 import { MatCardModule } from '@angular/material/card'

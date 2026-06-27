@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { ChallengeService } from '../Services/challenge.service'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { SocketIoService } from '../Services/socket-io.service'
@@ -363,10 +358,10 @@ describe('SidenavComponent', () => {
 
     describe('template rendering', () => {
         it('should render the toolbar with the application name and a navigation list', () => {
-            component.applicationName = 'JuiceShop'
+            component.applicationName = 'HardCommerce'
             fixture.detectChanges()
             const compiled: HTMLElement = fixture.nativeElement
-            expect(compiled.querySelector('mat-toolbar h2')?.textContent).toContain('JuiceShop')
+            expect(compiled.querySelector('mat-toolbar h2')?.textContent).toContain('HardCommerce')
             expect(compiled.querySelector('mat-nav-list')).toBeTruthy()
         })
 
@@ -484,22 +479,22 @@ describe('SidenavComponent', () => {
         it('should render the GitHub link when showGitHubLink is true', () => {
             component.showGitHubLink = true
             fixture.detectChanges()
-            expect((fixture.nativeElement as HTMLElement).querySelector('a[aria-label="Go to OWASP Juice Shop GitHub page"]')).toBeTruthy()
+            expect((fixture.nativeElement as HTMLElement).querySelector('a[aria-label="Go to Hard Commerce Lab GitHub page"]')).toBeTruthy()
         })
 
         it('should not render the GitHub link when showGitHubLink is false', () => {
             component.showGitHubLink = false
             component.scoreBoardVisible = false
             fixture.detectChanges()
-            expect((fixture.nativeElement as HTMLElement).querySelector('a[aria-label="Go to OWASP Juice Shop GitHub page"]')).toBeNull()
+            expect((fixture.nativeElement as HTMLElement).querySelector('a[aria-label="Go to Hard Commerce Lab GitHub page"]')).toBeNull()
         })
 
         it('should render the application name and version in the footer', () => {
-            component.applicationName = 'JuiceShop'
+            component.applicationName = 'HardCommerce'
             component.version = 'v1.2.3'
             fixture.detectChanges()
             const footer = (fixture.nativeElement as HTMLElement).querySelector('.appVersion')
-            expect(footer?.querySelector('.app-name')?.textContent).toContain('JuiceShop')
+            expect(footer?.querySelector('.app-name')?.textContent).toContain('HardCommerce')
             expect(footer?.querySelector('.app-version')?.textContent).toContain('v1.2.3')
         })
     })

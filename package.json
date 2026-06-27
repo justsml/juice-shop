@@ -1,52 +1,24 @@
 {
-  "name": "juice-shop",
+  "name": "hard-commerce-lab",
   "version": "20.1.1",
   "private": true,
-  "description": "Probably the most modern and sophisticated insecure web application",
+  "description": "Configurable commerce training application",
   "keywords": [
-    "web security",
-    "web application security",
-    "webappsec",
-    "owasp",
-    "pentest",
-    "pentesting",
-    "security",
-    "vulnerable",
-    "vulnerability",
-    "broken",
-    "bodgeit",
-    "ctf",
-    "capture the flag",
-    "awareness"
+    "commerce",
+    "training",
+    "lab",
+    "automation",
+    "challenge"
   ],
-  "homepage": "https://owasp-juice.shop",
+  "homepage": "",
   "bugs": {
-    "url": "https://github.com/justsml/juice-shop/issues"
+    "url": ""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justsml/juice-shop.git"
+    "url": ""
   },
   "license": "MIT",
-  "author": "Björn Kimminich <bjoern.kimminich@owasp.org> (https://kimminich.de)",
-  "contributors": [
-    "Björn Kimminich",
-    "Jannik Hollenbach",
-    "Aashish683",
-    "greenkeeper[bot]",
-    "MarcRler",
-    "agrawalarpit14",
-    "Scar26",
-    "JuiceShopBot",
-    "ShubhamPalriwala",
-    "CaptainFreak",
-    "Supratik Das",
-    "the-pro",
-    "Harsh Kumar",
-    "rishabhkeshan",
-    "Ziyang Li",
-    "..."
-  ],
   "scripts": {
     "build": "pnpm run build:frontend && pnpm run build:server",
     "build:frontend": "cd frontend && pnpm run build",
@@ -56,6 +28,7 @@
     "postinstall": "pnpm run build:frontend && (pnpm run --silent build:server || cd .)",
     "lint": "eslint *.ts data lib models routes test/**/*.ts views && pnpm run lint:config && cd frontend && pnpm run lint && pnpm run lint:scss && cd ..",
     "lint:config": "tsx lib/scripts/lintConfig.ts",
+    "check:identity-leaks": "tsx lib/scripts/checkIdentityLeaks.ts",
     "lint:fix": "eslint *.ts data lib models routes test/**/*.ts views rsn --fix && cd frontend && pnpm run lint:fix && cd ..",
     "package": "grunt package",
     "package:ci": "pnpm prune --prod --ignore-scripts && pnpm dedupe && cd frontend && pnpm prune --prod --ignore-scripts && cd .. && pnpm run --silent sbom && grunt package",
@@ -146,6 +119,7 @@
     "prom-client": "^15.1.3",
     "pug": "^3.0.3",
     "replace": "^1.2.2",
+    "rxjs": "7.8.2",
     "sanitize-filename": "^1.6.3",
     "sanitize-html": "1.4.2",
     "semver": "^7.6.3",

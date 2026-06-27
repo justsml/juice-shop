@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { NgClass } from '@angular/common'
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
 import { MatProgressBarModule } from '@angular/material/progress-bar'

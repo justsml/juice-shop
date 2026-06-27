@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { environment } from 'src/environments/environment'
 import { Injectable, NgZone, inject } from '@angular/core'
 import io from 'socket.io-client'

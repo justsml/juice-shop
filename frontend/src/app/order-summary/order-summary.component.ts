@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, NgZone, type OnInit, inject } from '@angular/core'
 import { AddressService } from '../Services/address.service'
 import { PaymentService } from '../Services/payment.service'

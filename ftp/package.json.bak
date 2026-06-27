@@ -1,12 +1,12 @@
 {
-  "name": "juice-shop",
+  "name": "hard-commerce-lab",
   "version": "6.2.0-SNAPSHOT",
   "description": "An intentionally insecure JavaScript Web Application",
-  "homepage": "http://owasp-juice.shop",
-  "author": "Björn Kimminich <bjoern.kimminich@owasp.org> (https://kimminich.de)",
+  "homepage": "http://hardcommerce-juice.shop",
+  "author": "Casey Morgan <casey.kimminich@hardcommerce.org> (https://kimminich.de)",
   "contributors": [
-    "Björn Kimminich",
-    "Jannik Hollenbach",
+    "Casey Morgan",
+    "Riley Nguyen",
     "Aashish683",
     "greenkeeper[bot]",
     "MarcRler",
@@ -14,7 +14,7 @@
     "Scar26",
     "CaptainFreak",
     "Supratik Das",
-    "JuiceShopBot",
+    "HardCommerceBot",
     "the-pro",
     "Ziyang Li",
     "aaryan10",
@@ -27,7 +27,7 @@
     "web security",
     "web application security",
     "webappsec",
-    "owasp",
+    "hardcommerce",
     "pentest",
     "pentesting",
     "security",
@@ -116,10 +116,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ExploitHunterApp/hard-juice-shop.git"
+    "url": "https://bike-shed.example/source.git"
   },
   "bugs": {
-    "url": "https://github.com/ExploitHunterApp/hard-juice-shop/issues"
+    "url": "https://bike-shed.example/source/issues"
   },
   "license": "MIT",
   "scripts": {

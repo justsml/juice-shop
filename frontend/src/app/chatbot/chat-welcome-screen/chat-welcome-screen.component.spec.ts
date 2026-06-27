@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
 import { ChatWelcomeScreenComponent } from './chat-welcome-screen.component'
@@ -56,7 +51,7 @@ describe('ChatWelcomeScreenComponent', () => {
 
     it('should render the welcome title', () => {
         const title = fixture.nativeElement.querySelector('.welcome-title')
-        expect(title.textContent).toContain('Juicy')
+        expect(title.textContent).toContain('Yak AI')
     })
 
     it('should render the welcome subtitle', () => {
@@ -64,7 +59,7 @@ describe('ChatWelcomeScreenComponent', () => {
         expect(subtitle.textContent).toContain('CHATBOT_SUBTITLE')
     })
 
-    it('should render the JuicyBot avatar', () => {
+    it('should render the ChatbotAvatar avatar', () => {
         const avatar = fixture.nativeElement.querySelector('.welcome-avatar')
         expect(avatar).toBeTruthy()
         expect(avatar.getAttribute('alt')).toBe('CHATBOT_AVATAR_ALT')

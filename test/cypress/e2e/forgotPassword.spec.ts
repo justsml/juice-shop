@@ -47,12 +47,12 @@ describe('/#/forgot-password', () => {
     })
   })
 
-  describe('as Bjoern', () => {
+  describe('as Casey', () => {
     describe('for his internal account', () => {
       it('should be able to reset password with his security answer', () => {
         cy.task<string>('GetFromConfig', 'application.domain').then(
           (appDomain: string) => {
-            cy.get('#email').type(`bjoern@${appDomain}`)
+            cy.get('#email').type(`casey@${appDomain}`)
           }
         )
         cy.wait('@securityQuestion')
@@ -63,13 +63,13 @@ describe('/#/forgot-password', () => {
         cy.get('#resetButton').click()
 
         cy.get('.confirmation').should('not.be.hidden')
-        cy.expectChallengeSolved({ challenge: "Reset Bjoern's Password" })
+        cy.expectChallengeSolved({ challenge: "Reset Casey's Password" })
       })
     })
 
-    describe('for his OWASP account', () => {
+    describe('for his The community account', () => {
       it('should be able to reset password with his security answer', () => {
-        cy.get('#email').type('bjoern@owasp.org')
+        cy.get('#email').type('casey@owasp.org')
         cy.wait('@securityQuestion')
         cy.get('#securityAnswer').should('not.be.disabled').focus().type('Zaya')
         // recordings to properly fix behavior during test
@@ -78,7 +78,7 @@ describe('/#/forgot-password', () => {
         cy.get('#resetButton').click()
 
         cy.get('.confirmation').should('not.be.hidden')
-        cy.expectChallengeSolved({ challenge: "Bjoern's Favorite Pet" })
+        cy.expectChallengeSolved({ challenge: "Casey's Favorite Pet" })
       })
     })
   })

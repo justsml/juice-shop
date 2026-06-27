@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import {
   Model,
   type InferAttributes,
@@ -18,7 +13,7 @@ export const CHALLENGE_KEYS = [
   'registerAdminChallenge',
   'adminSectionChallenge',
   'fileWriteChallenge',
-  'resetPasswordBjoernOwaspChallenge',
+  'resetPasswordCaseyCorpChallenge',
   'tokenSaleChallenge',
   'nftUnlockChallenge',
   'nftMintChallenge',
@@ -80,7 +75,7 @@ export const CHALLENGE_KEYS = [
   'reflectedXssChallenge',
   'passwordRepeatChallenge',
   'resetPasswordBenderChallenge',
-  'resetPasswordBjoernChallenge',
+  'resetPasswordCaseyChallenge',
   'resetPasswordJimChallenge',
   'resetPasswordMortyChallenge',
   'retrieveBlueprintChallenge',

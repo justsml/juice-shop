@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
 import express, { type NextFunction, type Request, type Response } from 'express'
 import path from 'node:path'
 import config from 'config'

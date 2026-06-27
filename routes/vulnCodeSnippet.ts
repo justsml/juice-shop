@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type NextFunction, type Request, type Response } from 'express'
 import yaml from 'js-yaml'
 import fs from 'node:fs/promises'
@@ -11,7 +6,7 @@ import { getCodeChallenges } from '../lib/codingChallenges'
 import * as challengeUtils from '../lib/challengeUtils'
 import * as accuracy from '../lib/accuracy'
 import * as utils from '../lib/utils'
-import { type ChallengeKey } from '@juice-shop/models/challenge'
+import { type ChallengeKey } from '@juice-commerce/models/challenge'
 
 interface SnippetRequestBody {
   challenge: string

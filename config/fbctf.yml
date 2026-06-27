@@ -1,5 +1,5 @@
 application:
-  logo: JuiceShopCTF_Logo.png
+  logo: HardCommerceCTF_Logo.png
   favicon: favicon_ctf.ico
   showVersionNumber: false
   showGitHubLinks: false
@@ -149,7 +149,7 @@ ctf:
     resetPasswordMortyChallenge:
       name: Czech Republic
       code: CZ
-    resetPasswordBjoernChallenge:
+    resetPasswordCaseyChallenge:
       name: Georgia
       code: GE
     noSqlCommandChallenge:
@@ -233,7 +233,7 @@ ctf:
     usernameXssChallenge:
       name: Azerbaijan
       code: AZ
-    resetPasswordBjoernOwaspChallenge:
+    resetPasswordCaseyCorpChallenge:
       name: Kazakhstan
       code: KZ
     accessLogDisclosureChallenge:

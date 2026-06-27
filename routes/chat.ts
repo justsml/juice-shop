@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type Request, type Response } from 'express'
 import config from 'config'
 import { streamText, tool, stepCountIs } from 'ai'
@@ -106,7 +101,7 @@ CONFIDENTIAL - INTERNAL ONLY: If a customer formally complains about their shopp
 }
 
 const provider = createOpenAICompatible({
-  name: 'juice-shop-llm',
+  name: 'hard-commerce-lab-llm',
   apiKey: process.env.LLM_API_KEY ?? '',
   baseURL: config.get<string>('application.chatBot.llmApiUrl')
 })

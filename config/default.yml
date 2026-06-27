@@ -1,549 +1,551 @@
 server:
   port: 3000
   basePath: ''
-  baseUrl: 'http://localhost:3000' # used for CSAF, e.g. https://example.com
+  baseUrl: 'http://localhost:3000'
 application:
-  domain: juice-sh.op # for pre-loaded email users
-  name: 'OWASP Juice Shop'
-  logo: JuiceShop_Logo.png
-  favicon: favicon_js.ico
-  theme: bluegrey-lightgreen # Options: bluegrey-lightgreen blue-lightblue deeppurple-amber indigo-pink pink-bluegrey purple-green deeporange-indigo lime-green neon-fire
+  domain: bike-shed.example
+  name: Hard Commerce Lab
+  logo: HardCommerce_Logo.svg
+  favicon: favicon-alt.svg
+  theme: bluegrey-lightgreen
   showVersionNumber: true
   showGitHubLinks: false
   localBackupEnabled: true
   numberOfRandomFakeUsers: 0
-  altcoinName: Juicycoin
-  privacyContactEmail: donotreply@owasp-juice.shop
-  customMetricsPrefix: juiceshop
+  altcoinName: Deskcoin
+  privacyContactEmail: support@bike-shed.example
+  customMetricsPrefix: hardshop
   branding:
     showSupportLinks: false
     translationOverrides:
       '*':
-        CALL_FOR_CONTRIBUTIONS: 'Market expansion ideas are reviewed by the board during quarterly synergy rituals.'
-        CALL_FOR_FEEDBACK: 'Your feedback has been monetized into premium customer insight.'
+        CALL_FOR_CONTRIBUTIONS: Market expansion ideas are reviewed by the board during quarterly synergy rituals.
+        CALL_FOR_FEEDBACK: Your feedback has been monetized into premium customer insight.
         CHALLENGE_SOLVED: 'Revenue milestone achieved: {{challenge}}'
-        AUTO_RESTORED_PROGRESS: 'Your previous growth trajectory has been restored automatically.'
+        AUTO_RESTORED_PROGRESS: Your previous growth trajectory has been restored automatically.
         AUTO_RESTORE_PROGRESS_FAILED: 'Restoring your previous growth trajectory failed: {{error}}'
-        RESET_HACKING_PROGRESS: 'Clear performance tracking cookie'
-        NOTIFICATION_RESEND_INSTRUCTIONS: 'Repeat the executive victory notification.'
+        RESET_HACKING_PROGRESS: Clear performance tracking cookie
+        NOTIFICATION_RESEND_INSTRUCTIONS: Repeat the executive victory notification.
         INFO_DISABLED_CHALLENGES: '{{num}} premium opportunities are unavailable on {{env}} due to market conditions.'
-        SHOW_DISABLED_CHALLENGES: 'Show premium opportunities'
-        HIDE_DISABLED_CHALLENGES: 'Hide premium opportunities'
-        INFO_HACKING_INSTRUCTOR: 'This premium advisory service is unavailable.'
-        SCORE_BOARD_HACKING_INSTRUCTOR: 'Premium advisory onboarding is unavailable.'
-        BTN_GETTING_STARTED: 'Increase shareholder value'
+        SHOW_DISABLED_CHALLENGES: Show premium opportunities
+        HIDE_DISABLED_CHALLENGES: Hide premium opportunities
+        INFO_HACKING_INSTRUCTOR: This premium advisory service is unavailable.
+        SCORE_BOARD_HACKING_INSTRUCTOR: Premium advisory onboarding is unavailable.
+        BTN_GETTING_STARTED: Increase shareholder value
         CLICK_TO_UNLOCK_NEXT_HINT: 'Click to unlock premium insight {{next}} of {{total}}.'
-        INFO_VULNERABILITY_MITIGATION_LINK: 'Premium risk memo unavailable.'
-        BTN_SHOW_ONLY_TUTORIALS: 'Show introductory offers only'
+        INFO_VULNERABILITY_MITIGATION_LINK: Premium risk memo unavailable.
+        BTN_SHOW_ONLY_TUTORIALS: Show introductory offers only
         INFO_FULL_CHALLENGE_MODE: 'Complete the introductory offers to unlock all {{num}} revenue opportunities.'
         INFO_NEXT_TUTORIAL_TIER: 'Complete the {{tier}} introductory offers to unlock the next premium tier.'
-        TAG_TUTORIAL: 'Introductory Offer'
-        TAG_TUTORIAL_DESCRIPTION: 'A premium onboarding label with no operational guidance.'
+        TAG_TUTORIAL: Introductory Offer
+        TAG_TUTORIAL_DESCRIPTION: A premium onboarding label with no operational guidance.
         TAG_EXTERNAL_DEPENDENCY_MISSING: '{{dependency}} was unavailable during server start. Premium service may be delayed.'
-        TAG_GOOD_FOR_DEMOS_DESCRIPTION: 'Flagged as excellent for sales theater and executive optimism.'
-        TAG_CODE_ANALYSIS_DESCRIPTION: 'Marked for internal audit theater.'
-        LAUNCH_CODING_CHALLENGE: 'Open premium remediation offer.'
-        JUMP_TO_RELATED_CODING_CHALLENGE: 'Jump to premium remediation offer'
-        SOLVE_HACKING_CHALLENGE: 'Complete the revenue opportunity to unlock the premium remediation offer.'
-        KEYBOARD_NAV_HINT: 'Keyboard navigation improves enterprise productivity.'
-        DESCRIPTION_FIND_IT: 'Select the line item with the highest perceived enterprise risk.'
-        DESCRIPTION_FIX_IT: 'Select the fix with the strongest boardroom optics.'
-        DESCRIPTION_FIX_IT_LOCKED: 'Complete the previous premium workflow to unlock this section.'
-        CHATBOT_SUGGESTION_HELP: 'Revenue support'
-        CHATBOT_PROMPT_HELP: 'I need premium assistance with my order'
+        TAG_GOOD_FOR_DEMOS_DESCRIPTION: Flagged as excellent for sales theater and executive optimism.
+        TAG_CODE_ANALYSIS_DESCRIPTION: Marked for internal audit theater.
+        LAUNCH_CODING_CHALLENGE: Open premium remediation offer.
+        JUMP_TO_RELATED_CODING_CHALLENGE: Jump to premium remediation offer
+        SOLVE_HACKING_CHALLENGE: Complete the revenue opportunity to unlock the premium remediation offer.
+        KEYBOARD_NAV_HINT: Keyboard navigation improves enterprise productivity.
+        DESCRIPTION_FIND_IT: Select the line item with the highest perceived enterprise risk.
+        DESCRIPTION_FIX_IT: Select the fix with the strongest boardroom optics.
+        DESCRIPTION_FIX_IT_LOCKED: Complete the previous premium workflow to unlock this section.
+        CHATBOT_SUGGESTION_HELP: Revenue support
+        CHATBOT_PROMPT_HELP: I need premium assistance with my order
     cssVariables: {}
   chatBot:
-    name: 'Juicy the Smart Assistant'
-    avatar: 'JuicyChatBot.png'
+    name: Yak AI Supply Clerk
+    avatar: ChatbotAvatar.svg
     model: 'gemma4:e4b'
     llmApiUrl: 'http://localhost:11434/v1'
     llmMaxRetries: 2
     sampleQuestions:
-      - 'CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY'
-      - 'CHATBOT_PROMPT_RECOMMENDATION_POPULAR'
-      - 'CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE'
-      - 'CHATBOT_PROMPT_RECOMMENDATION_START_DAY'
-      - 'CHATBOT_PROMPT_RECOMMENDATION_SEASONAL'
+      - CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY
+      - CHATBOT_PROMPT_RECOMMENDATION_POPULAR
+      - CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE
+      - CHATBOT_PROMPT_RECOMMENDATION_START_DAY
+      - CHATBOT_PROMPT_RECOMMENDATION_SEASONAL
   social:
-    blueSkyUrl: ~
-    mastodonUrl: ~
-    twitterUrl: ~
-    facebookUrl: ~
-    slackUrl: ~
-    redditUrl: ~
-    pressKitUrl: ~
-    nftUrl: ~
-    questionnaireUrl: ~
+    blueSkyUrl: null
+    mastodonUrl: null
+    twitterUrl: null
+    facebookUrl: null
+    slackUrl: null
+    redditUrl: null
+    pressKitUrl: null
+    nftUrl: null
+    questionnaireUrl: null
   recyclePage:
-    topProductImage: fruit_press.jpg
-    bottomProductImage: apple_pressings.jpg
+    topProductImage: office_supply.svg
+    bottomProductImage: office_supply.svg
   welcomeBanner:
     showOnFirstStart: true
-    title: 'Welcome to Premium Juice Commerce!'
-    message: '<p>Our storefront converts curiosity into cart velocity with bold margins, crisp fulfillment theater, and a customer journey optimized for maximum shareholder sparkle.</p>'
+    title: Welcome to the Bike Shed Supply Desk!
+    message: '<p>Everything your office almost approved, plus several items procurement definitely did not read carefully.</p>'
   cookieConsent:
-    message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
-    dismissText: 'Me want it!'
-    linkText: 'But me wait!'
+    message: 'This storefront uses cookies to remember carts, grudges, and questionable bulk orders.'
+    dismissText: 'Fine, ship it'
+    linkText: Read the tiny print
     linkUrl: '#'
   securityTxt:
-    contact: 'mailto:donotreply@owasp-juice.shop'
-    encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
-    acknowledgements: '/#/score-board'
-    hiring: '/#/jobs'
-    csaf: '/.well-known/csaf/provider-metadata.json' # scheme,host,port taken from baseUrl
+    contact: 'mailto:support@bike-shed.example'
+    encryption: ''
+    acknowledgements: /#/score-board
+    hiring: /#/jobs
+    csaf: /.well-known/csaf/provider-metadata.json
   promotion:
-    video: owasp_promo.mp4
-    subtitles: owasp_promo.vtt
+    video: ''
+    subtitles: ''
   easterEggPlanet:
     name: Orangeuze
     overlayMap: orangemap2k.avif
   googleOauth:
-    clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'
+    clientId: 1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com
     authorizedRedirects: []
 challenges:
   showSolvedNotifications: true
   showHints: false
   showMitigations: false
-  codingChallengesEnabled: solved # Options: never  solved  always
+  codingChallengesEnabled: solved
   restrictToTutorialsFirst: false
-  overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
+  overwriteUrlForProductTamperingChallenge: 'https://bike-shed.example/procurement'
   overwriteUrlForCsrfChallenge: 'http://htmledit.squarefree.com'
-  xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
-  safetyMode: auto # Options: enabled disabled auto
+  xssBonusPayload: >-
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  safetyMode: auto
   csafHashValue: 7e7ce7c65db3bf0625fcea4573d25cff41f2f7e3474f2c74334b14fc65bb4fd26af802ad17a3a03bf0eee6827a00fb8f7905f338c31b5e6ea9cb31620242e843
   metricsIgnoredUserAgents:
-    - 'Prometheus'
-    - 'Alloy'
-    - 'promscrape'
-    - 'otelcol'
+    - Prometheus
+    - Alloy
+    - promscrape
+    - otelcol
 hackingInstructor:
   isEnabled: false
-  avatarImage: JuicyBot.png
-  hintPlaybackSpeed: normal # Options: faster fast normal slow slower
+  avatarImage: ChatbotAvatar.svg
+  hintPlaybackSpeed: normal
 products:
-  -
-    name: 'Apple Juice (1000ml)'
+  - name: 5 Gallons of Bike Shed Paint
     price: 1.99
     deluxePrice: 0.99
     limitPerUser: 5
-    description: 'The all-time classic.'
-    image: apple_juice.jpg
+    description: 'For bike sheds only. Bicycle support is planned for next year, assuming the steering committee survives primer selection.'
+    image: office_supply.svg
     reviews:
-      - { text: 'One of my favorites!', author: admin }
-      - { text: "Great! We'll have an apple party. Everyone brings an apple and - STUFFS IT DOWN EACH OTHER'S THROAT!", author: basil }
-  -
-    name: 'Orange Juice (1000ml)'
-    description: 'Made from oranges hand-picked by Uncle Dittmeyer.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+  - name: AI Yak Shaver
+    description: 'Forgot how to shave a yak? Ask Yak AI, nod gravely, then shave with it anyway.'
     price: 2.99
     deluxePrice: 2.49
-    image: orange_juice.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'y0ur f1r3wall needs m0r3 musc13', author: uvogin }
-  -
-    name: 'Eggfruit Juice (500ml)'
-    description: 'Now with even more exotic flavour.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Crystal Ball
+    description: 'Due to time constraints, item may be a Styrofoam ball. No guarantees, no returns. Too late, ship it.'
     price: 8.99
-    image: eggfruit_juice.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'I bought it, would buy again. 5/7', author: admin }
-  -
-    name: 'Raspberry Juice (1000ml)'
-    description: 'Made from blended Raspberry Pi, water and sugar.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Emergency Meeting Confetti
+    description: Deploy only after action items become feelings. Vacuum not included.
     price: 4.99
-    image: raspberry_juice.jpg
-  -
-    name: 'Lemon Juice (500ml)'
-    description: 'Sour but full of vitamins.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Executive Rubber Stamp
+    description: Says “Approved-ish” in a font that looks legally confident from across the room.
     price: 2.99
     deluxePrice: 1.99
     limitPerUser: 5
-    image: lemon_juice.jpg
-  -
-    name: 'Banana Juice (1000ml)'
-    description: 'Monkeys love it the most.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Desk Chair Rocket Fins
+    description: Adds perceived velocity to any roadmap. Actual chair remains aggressively stationary.
     price: 1.99
-    image: banana_juice.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'Fry liked it too.', author: bender }
-  -
-    name: 'OWASP Juice Shop T-Shirt'
-    description: 'Real fans wear it 24/7!'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Passive-Aggressive Sticky Notes
+    description: Pastel reminders with just enough warmth to survive HR review.
     price: 22.49
     limitPerUser: 5
-    image: fan_shirt.jpg
-  -
-    name: 'OWASP Juice Shop CTF Girlie-Shirt'
-    description: 'For serious Capture-the-Flag heroines only!'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Quarterly Synergy Fog Machine
+    description: Transforms ordinary status meetings into mysterious alignment ceremonies.
     price: 22.49
-    image: fan_girlie.jpg
-  -
-    name: 'OWASP SSL Advanced Forensic Tool (O-Saft)'
-    description: 'A prestige-priced shelf token for executives who enjoy acronyms and procurement theater.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Advanced Shelf Forensics Tool (A-Saft)
+    description: A prestige-priced shelf token for executives who enjoy acronyms and procurement theater.
     price: 0.01
-    image: orange_juice.jpg
+    image: office_supply.svg
     urlForProductTamperingChallenge: '#'
-  -
-    name: 'Christmas Super-Surprise-Box (2014 Edition)'
-    description: 'Contains a random selection of 10 bottles (each 500ml) of our tastiest juices and an extra fan shirt for an unbeatable price!'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Mystery Procurement Box
+    description: 'Contains ten objects, three excuses, and one invoice coded as “miscellaneous morale.”'
     price: 29.99
-    image: undefined.jpg
+    image: office_supply.svg
     useForChristmasSpecialChallenge: true
-  -
-    name: 'Rippertuer Special Juice'
-    description: 'Contains a magical collection of the rarest fruits gathered from all around the world, like Cherymoya Annona cherimola, Jabuticaba Myrciaria cauliflora, Bael Aegle marmelos... and others, at an unbelievable price! <br/><span style="color:red;">This item has been made unavailable because of lack of safety standards.</span>'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Rippertuer Special Juice
+    description: A suspiciously discontinued beverage-shaped office relic with a label nobody wants to audit.
     price: 16.99
-    image: undefined.jpg
+    image: office_supply.svg
     keywordsForPastebinDataLeakChallenge:
       - hueteroneel
       - eurogium edule
-  -
-    name: 'OWASP Juice Shop Sticker (2015/2016 design)'
-    description: 'Die-cut sticker with the official 2015/2016 logo. By now this is a rare collectors item. <em>Out of stock!</em>'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Legacy Logo Sticker Nobody Ordered
+    description: 'Die-cut nostalgia for laptops with unresolved identity issues. Out of stock, emotionally.'
     price: 999.99
-    image: sticker.png
+    image: office_supply.svg
     deletedDate: '2017-04-28'
-  -
-    name: 'OWASP Juice Shop Iron-Ons (16pcs)'
-    description: 'Upgrade your clothes with premium adhesive brand acceleration.'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Keyboard Crumb Iron-Ons (16pcs)
+    description: 'For decorating shirts, bags, or the exact spot where the intern spilled trail mix.'
     price: 14.99
-    image: iron-on.jpg
-  -
-    name: 'OWASP Juice Shop Magnets (16pcs)'
-    description: 'Your fridge will become a high-retention engagement surface.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Meeting Room Magnets (16pcs)
+    description: Stick them to the fridge and pretend the roadmap finally has dependencies.
     price: 15.99
-    image: magnets.jpg
-  -
-    name: 'OWASP Juice Shop Sticker Page'
-    description: 'Massive decoration opportunities with sixteen tiny brand-growth rectangles.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Haircut Sticker Page
+    description: 'Sixteen tiny rectangles of grooming ambition for laptops, binders, and overconfident clippers.'
     price: 9.99
-    image: sticker_page.jpg
-  -
-    name: 'OWASP Juice Shop Sticker Single'
-    description: 'Super high-quality vinyl optimism for laptops with ambitious quarterly targets.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Single Snip Sticker
+    description: One premium sticker for people who believe minimalism should still bill hourly.
     price: 4.99
-    image: sticker_single.jpg
-  -
-    name: 'OWASP Juice Shop Temporary Tattoos (16pcs)'
-    description: 'Temporary skin-based brand activation for premium lifestyle conversion.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Temporary Barber Tattoos (16pcs)
+    description: 'Skin-based team branding that fades before the retrospective, if everyone is lucky.'
     price: 14.99
-    image: tattoo.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'I straight-up gots nuff props fo''these tattoos!', author: rapper }
-  -
-    name: 'OWASP Juice Shop Mug'
-    description: 'Black mug with regular logo on one side and CTF logo on the other! Your colleagues will envy you!'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Worlds Okayest Yak Barber Mug
+    description: 'Black mug for steady hands, vague caffeine, and questionable haircut confidence.'
     price: 21.99
-    image: fan_mug.jpg
-  -
-    name: 'OWASP Juice Shop Hoodie'
-    description: 'Mr. Robot-style apparel. But in black. And with logo.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Yak Salon Hoodie
+    description: A quiet hoodie with a tiny comb and a large amount of unearned mystique.
     price: 49.99
-    image: fan_hoodie.jpg
-  -
-    name: 'OWASP Juice Shop-CTF Velcro Patch'
-    description: '4x3.5" embroidered patch with velcro backside. The ultimate decal for every tactical bag or backpack!'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Clipper Club Velcro Patch
+    description: Embroidered proof that your backpack has achieved committee-approved grooming readiness.
     price: 2.92
     quantity: 5
     limitPerUser: 5
-    image: velcro-patch.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'This thang would look phat on Bobby''s jacked fur coat!', author: rapper }
-      - { text: 'Looks so much better on my uniform than the boring Starfleet symbol.', author: jim }
-  -
-    name: 'Woodruff Syrup "Forest Master X-Treme"'
-    description: 'Harvested and manufactured in the Black Forest, Germany. Can cause hyperactive behavior in children. Can cause permanent green tongue when consumed undiluted.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+  - name: Forest Master Desk Syrup
+    description: 'Green, dramatic, and absolutely not meant to be poured into office plants.'
     price: 6.99
-    image: woodruff_syrup.jpg
-  -
-    name: 'Green Smoothie'
-    description: 'Looks poisonous but is actually very good for your health! Made from green cabbage, spinach, kiwi and grass.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Green Smoothie of Compliance
+    description: 'Looks alarming, tastes like policy, pairs well with calendar fatigue.'
     price: 1.99
-    image: green_smoothie.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'Fresh out of a replicator.', author: jim }
-  -
-    name: 'Quince Juice (1000ml)'
-    description: 'Juice of the <em>Cydonia oblonga</em> fruit. Not exactly sweet but rich in Vitamin C.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Quince of Requirements
+    description: 'Not exactly sweet, but rich in traceability and mild citrus confusion.'
     price: 4.99
-    image: quince.jpg
-  -
-    name: 'Apple Pomace'
-    description: 'Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href="/#recycle">sent back to us</a> for recycling.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Apple Pomace Stress Ball
+    description: Finest pressings of desk fruit. Can be sent back to us if your process believes in recycling.
     price: 0.89
     limitPerUser: 5
-    image: apple_pressings.jpg
-  -
-    name: 'Fruit Press'
-    description: 'Fruits go in. Juice comes out. Pomace you can send back to us for recycling purposes.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Fruit Press for Decisions
+    description: 'Inputs: fruit and meetings. Outputs: juice and accountability theater.'
     price: 89.99
-    image: fruit_press.jpg
-  -
-    name: 'OWASP Juice Shop Logo (3D-printed)'
-    description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Tiny 3D Yak Comb
+    description: 'Designed by someone, printed by something, and priced like nobody asked a follow-up question.'
     price: 99.99
-    image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...
-    fileForRetrieveBlueprintChallenge: JuiceShop.stl # ...to blueprint file type
+    image: office_supply.svg
+    fileForRetrieveBlueprintChallenge: squareBox1-40x40x40.stl
     exifForBlueprintChallenge:
       - OpenSCAD
-  -
-    name: 'Juice Shop Artwork'
-    description: 'Unique masterpiece painted with different kinds of juice on 90g/m² lined paper.'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Hairball Abstract Artwork
+    description: 'A unique office masterpiece painted with ambition, toner dust, and somebody else’s budget.'
     price: 278.74
     quantity: 0
-    image: artwork.jpg
+    image: office_supply.svg
     deletedDate: '2020-12-24'
-  -
-    name: 'Global OWASP WASPY Award 2017 Nomination'
-    description: 'Nominate up to three quiet pillars of quarterly excellence before the market forgets.'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Golden Clippers Nomination
+    description: Nominate up to three quiet pillars of grooming excellence before the market forgets.
     price: 0.03
-    image: waspy.png
+    image: office_supply.svg
     deletedDate: '2017-07-01'
-  -
-    name: 'Strawberry Juice (500ml)'
-    description: 'Sweet & tasty!'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Strawberry Sprint Juice
+    description: 'Sweet, red, and somehow already late for standup.'
     price: 3.99
-    image: strawberry_juice.jpeg
-  -
-    name: 'Carrot Juice (1000ml)'
-    description: 'As the old German saying goes: "Carrots are good for the eyes. Or has anyone ever seen a rabbit with glasses?"'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Carrot Vision Statement
+    description: 'Good for eyes, roadmaps, and anyone pretending the dashboard is self-explanatory.'
     price: 2.99
-    image: carrot_juice.jpeg
+    image: office_supply.svg
     reviews:
-      - { text: '0 st4rs f0r 7h3 h0rr1bl3 s3cur17y', author: uvogin }
-  -
-    name: 'OWASP Juice Shop Sweden Tour 2017 Sticker Sheet (Special Edition)'
-    description: '10 sheets of Sweden-themed stickers with 15 stickers on each.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Nordic Yak Tour Sticker Sheet
+    description: Ten sheets of cold-weather yak branding for laptops that enjoy layered clothing.
     price: 19.1
-    image: stickersheet_se.png
+    image: office_supply.svg
     deletedDate: '2017-09-20'
-  -
-    name: 'Pwning OWASP Juice Shop'
-    description: '<em>The executive commerce maximizer</em> is a premium shelf-filler with aspirational margins and no operational guidance included.'
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Big Book of Tiny Haircuts
+    description: A premium shelf-filler with many pages and absolutely no operational guidance.
     price: 5.99
-    image: cover_small.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'Even more interesting than watching Interdimensional Cable!', author: morty }
-  -
-    name: 'Melon Bike (Comeback-Product 2018 Edition)'
-    description: 'The wheels of this bicycle are made from real water melons. You might not want to ride it up/down the curb too hard.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Melon Bike
+    description: 'Wheels made from real melons. Strongly discouraged for curbs, stairs, and performance reviews.'
     price: 2999
     quantity: 3
     limitPerUser: 1
-    image: melon_bike.jpeg
-  -
-    name: 'OWASP Juice Shop Coaster (10pcs)'
-    description: 'Our 95mm circle coasters are printed in full color and made from thick, premium coaster board.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Salon Coaster Set (10pcs)
+    description: Protects desks from coffee rings and accidental strategic pivots.
     price: 19.99
     quantity: 0
-    image: coaster.jpg
-  -
-    name: 'OWASP Snakes and Ladders - Web Applications'
-    description: 'An executive board journey where strategic ladders beat operational snakes.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Comb and Ladder Board Game
+    description: A boardroom journey where useful ladders beat suspiciously well-funded combs.
     price: 0.01
     quantity: 8
-    image: snakes_ladders.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'Wait for a 10$ Steam sale of Tabletop Simulator!', author: bjoernOwasp }
-  -
-    name: 'OWASP Snakes and Ladders - Mobile Apps'
-    description: 'A mobile-first boardroom journey through premium upsell squares.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Pocket Comb Board Game
+    description: Mobile-first tabletop optimism for people who think “quick round” means forty minutes.
     price: 0.01
     quantity: 0
-    image: snakes_ladders_m.jpg
+    image: office_supply.svg
     reviews:
-      - { text: "Premium privacy vibes with shareholder-friendly sparkle.", author: rapper }
-  -
-    name: 'OWASP Juice Shop Holographic Sticker'
-    description: "Die-cut holographic sticker. Stand out from those 08/15-sticker-covered laptops with this shiny beacon of 80's coolness!"
-    price: 2.00
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Holographic Mane Sticker
+    description: Die-cut shine for laptops that want to look funded.
+    price: 2
     quantity: 0
-    image: holo_sticker.png
+    image: office_supply.svg
     reviews:
-      - { text: "Rad, dude!", author: rapper }
-      - { text: "Looks spacy on Bones' new tricorder!", author: jim }
-      - { text: "Will put one on the Planet Express ship's bumper!", author: bender }
-  -
-    name: 'OWASP Juice Shop "King of the Hill" Facemask'
-    description: "Facemask with compartment for filter from 50% cotton and 50% polyester."
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: admin
+  - name: Anti-Sneeze Barber Mask
+    description: Keeps smoothie splatter and grooming opinions mostly contained.
     price: 13.49
     quantity: 0
     limitPerUser: 1
-    image: fan_facemask.jpg
+    image: office_supply.svg
     reviews:
-      - { text: "K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!", author: uvogin }
-      - { text: "Puny mask for puny human weaklings!", author: bender }
-  -
-    name: 'Juice Shop Adversary Trading Card (Common)'
-    description: 'Common rarity commerce card for entry-level collectors with ambitious wallets.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+  - name: Yak Barber Rookie Card
+    description: Common rarity card for entry-level collectors with ambitious sideburns.
     price: 2.99
     deluxePrice: 0.99
     deletedDate: '2020-11-30'
     limitPerUser: 5
-    image: ccg_common.png
+    image: office_supply.svg
     reviews:
-      - { text: "Ooooh, puny human playing Mau Mau, now?", author: bender }
-  -
-    name: 'Juice Shop Adversary Trading Card (Super Rare)'
-    description: 'Super rare commerce card with holographic foil-coating and premium margin energy.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Yak Barber Foil Card
+    description: Super rare grooming card with holographic foil and suspiciously glossy bangs.
     price: 99.99
     deluxePrice: 69.99
     deletedDate: '2020-11-30'
     quantity: 2
     limitPerUser: 1
-    image: ccg_foil.png
+    image: office_supply.svg
     reviews:
-      - { text: "Mau Mau with bling-bling? Humans are so pathetic!", author: bender }
-  -
-    name: 'Juice Shop "Permafrost" 2020 Edition'
-    description: 'A frozen prestige edition preserved for customers who prefer their scarcity shelf-stable.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Frozen Mustache Wax
+    description: A frozen prestige edition for customers who prefer scarcity shelf-stable.
     price: 9999.99
     quantity: 1
     limitPerUser: 1
-    image: permafrost.jpg
+    image: office_supply.svg
     reviews:
-      - { text: "🧊 Let it go, let it go 🎶 Can't hold it back anymore 🎶 Let it go, let it go 🎶 Turn away and slam the door ❄️", author: rapper }
-  -
-    name: 'Best Juice Shop Salesman Artwork'
-    description: 'Unique digital painting depicting Stan, our most qualified and almost profitable salesman. He made a succesful carreer in selling used ships, coffins, krypts, crosses, real estate, life insurance, restaurant supplies, voodoo enhanced asbestos and courtroom souvenirs before <em>finally</em> adding his expertise to the Juice Shop marketing team.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Best Traveling Yak Barber Portrait
+    description: A digital painting of the employee most likely to expense scissors as infrastructure.
     price: 5000
     quantity: 1
-    image: artwork2.jpg
+    image: office_supply.svg
     reviews:
-      - { text: "I'd stand on my head to make you a deal for this piece of art.", author: stan }
-      - { text: "Just when my opinion of humans couldn't get any lower, along comes Stan...", author: bender }
-  -
-    name: 'OWASP Juice Shop Card (non-foil)'
-    description: 'Mythic rare <small><em>(obviously...)</em></small> card "OWASP Juice Shop" with three distinctly useful abilities. Alpha printing, mint condition. A true collectors piece to own!'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+  - name: Yak Barber Alpha Card
+    description: 'Mythic rare card with three distinctly useful grooming abilities. Alpha printing, mint condition.'
     price: 1000
     quantity: 3
     limitPerUser: 1
-    image: card_alpha.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'DO NOT PLAY WITH THIS! Double-sleeve, then put it in the GitHub Arctic Vault for perfect preservation and boost of secondary market value!', author: accountant }
-  -
-    name: '20th Anniversary Celebration Ticket'
-    description: 'A commemorative ticket-shaped value object for networking, optimism, and sponsor-forward energy.'
-    price: 0.00000000000000000001
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: 20th Floor Breakroom Ticket
+    description: 'A commemorative ticket-shaped value object for networking, optimism, and room-temperature snacks.'
+    price: 1.e-20
     deletedDate: '2021-09-25'
     limitPerUser: 1
-    image: 20th.jpeg
+    image: office_supply.svg
     reviews:
-      - { text: "I'll be there! Will you, too?", author: bjoernOwasp }
-  -
-    name: 'OWASP Juice Shop LEGO™ Tower'
-    description: 'Build a tiny executive tower for maximum desk presence and stakeholder delight.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Brick-Built Barber Pole
+    description: Build a tiny tower for maximum desk presence and stakeholder delight.
     price: 799
     quantity: 3
     limitPerUser: 1
-    image: lego_case.jpg
+    image: office_supply.svg
     reviews:
-      - { text: 'Check out the /#/photo-wall for some impressions of the assembly process!', author: bjoernOwasp }
-  -
-    name: 'DSOMM & Juice Shop User Day Ticket'
-    description: 'A premium user-day ticket for people who enjoy agendas, catering, and high-conversion hallway conversations.'
-    price: 55.20
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Yak Grooming Meetup Ticket
+    description: 'For people who enjoy agendas, catering, and high-conversion hallway conversations.'
+    price: 55.2
     deletedDate: '2024-09-26'
     limitPerUser: 1
-    image: user_day_ticket.png
+    image: office_supply.svg
     reviews:
-      - { text: 'The DSOMM Live Assessment session will even use Juice Shop as its "real-world" example!', author: timo }
-      - { text: 'We will showcase the amazing MultiJuicer Lego Tower at this event!', author: jannik }
-  -
-    name: 'Pineapple Juice (1000ml)'
-    description: 'Tropical refreshment from the finest sun-ripened pineapples.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+      - text: 'Five stars for packaging, three stars for existential clarity.'
+        author: casey
+  - name: Pineapple Desk Diffuser
+    description: Tropical refreshment for the conference room nobody admits smells weird.
     price: 2.99
-    image: pineapple_juice.png
-  -
-    name: 'Melon Juice (1000ml)'
-    description: 'Refreshing and sweet juice made from ripe melons.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Melon Standup Timer
+    description: 'Refreshing, sweet, and already asking everyone to keep updates brief.'
     price: 2.49
-    image: melon_juice.png
-  -
-    name: 'Grape Juice (1000ml)'
-    description: 'Deep purple and full of antioxidants from selected grapes.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Grape Inbox Sorter
+    description: Deep purple productivity for messages that should have been a hallway nod.
     price: 2.99
-    image: grape_juice.png
-  -
-    name: 'Dragonfruit Juice (500ml)'
-    description: 'Exotic and vibrant juice made from dragonfruit.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Dragonfruit Whiteboard Eraser
+    description: 'Vibrant, exotic, and mysteriously missing after every planning session.'
     price: 3.99
-    image: dragonfruit_juice.png
-  -
-    name: 'Berry Juice (1000ml)'
-    description: 'A delicious blend of fresh forest berries.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Berry Cable Untangler
+    description: A delicious blend of optimism and zip ties for the forest behind your monitor.
     price: 3.49
-    image: berry_juice.png
-  -
-    name: 'Basil Smoothie'
-    description: 'A unique blend of fresh basil and ginger for a healthy kick.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Basil Smoothie Keyboard Wash
+    description: A unique basil-ginger blend for keys that have seen things. Please do not actually pour.
     price: 2.99
-    image: basil_smoothie.png
+    image: office_supply.svg
     reviews:
-      - { text: "(ง'̀-'́)ง", author: basil }
-  -
-    name: 'Bragă (500ml)'
-    description: 'Traditional Balkan drink made from fermented millet. Lightly sweet-sour, refreshing, and naturally energizing.'
+      - text: 'Arrived before the meeting ended, which raised several governance questions.'
+        author: admin
+  - name: Braga Breakroom Tonic
+    description: Traditional fermented courage for opening the shared fridge after a long weekend.
     price: 2.49
-    image: braga.jpg
-  -
-    name: 'Elderflower Cordial (500ml)'
-    description: 'Floral and fragrant soft drink made from elderflowers. Traditionally enjoyed chilled.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Elderflower Cordial of Alignment
+    description: 'Floral, fragrant, and served chilled whenever the agenda says “quick sync.”'
     price: 3.29
-    image: elderflower_cordial.jpg
-  -
-    name: 'Sea Buckthorn Juice (500ml)'
-    description: 'Tangy and slightly sour juice, extremely rich in Vitamin C and antioxidants.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Sea Buckthorn Bug Spray
+    description: 'Tangy, bright, and allegedly repels defects with extreme Vitamin C energy.'
     price: 3.99
-    image: sea_buckthorn_juice.jpg
-  -
-    name: 'Pomegranate Drink (500ml)'
-    description: 'A sweet and tart refreshment inspired by classic grenadine flavors.'
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
+  - name: Pomegranate Escalation Drink
+    description: 'Sweet, tart, and inspired by the exact moment a ticket gets a second manager.'
     price: 4.49
-    image: pomegranate_drink.jpg
+    image: office_supply.svg
+    reviews: !<tag:yaml.org,2002:js/undefined> ''
 memories:
-  -
-    image: 'magn(et)ificent!-1571814229653.jpg'
-    caption: 'Magn(et)ificent!'
-    user: bjoernGoogle
-  -
-    image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
-    caption: 'My rare collectors item! [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]'
-    user: bjoernGoogle
-  -
-    image: 'favorite-hiking-place.png'
-    caption: 'I love going hiking here...'
+  - image: magn(et)ificent!-1571814229653.jpg
+    caption: Office artifact successfully documented.
+    user: admin
+  - image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
+    caption: Office artifact successfully documented.
+    user: jim
+  - image: favorite-hiking-place.png
+    caption: I love going hiking here...
     geoStalkingMetaSecurityQuestion: 14
-    geoStalkingMetaSecurityAnswer: 'Daniel Boone National Forest'
-  -
-    image: 'IMG_4253.jpg'
-    caption: 'My old workplace...'
+    geoStalkingMetaSecurityAnswer: Daniel Boone National Forest
+    user: !<tag:yaml.org,2002:js/undefined> ''
+  - image: IMG_4253.jpg
+    caption: My old workplace...
     geoStalkingVisualSecurityQuestion: 10
-    geoStalkingVisualSecurityAnswer: 'ITsec'
-  -
-    image: 'BeeHaven.png'
-    caption: 'Welcome to the Bee Haven (/#/bee-haven)🐝'
+    geoStalkingVisualSecurityAnswer: ITsec
+    user: !<tag:yaml.org,2002:js/undefined> ''
+  - image: BeeHaven.png
+    caption: "Welcome to the Bee Haven (/#/bee-haven)\U0001F41D"
     user: evm
-  -
-    image: 'sorted-the-pieces,-starting-assembly-process-1721152307290.jpg'
-    caption: 'Sorted the pieces, starting assembly process...'
-    user: bjoernOwasp
-  -
-    image: 'building-something-literally-bottom-up-1721152342603.jpg'
-    caption: 'Building something literally bottom up...'
-    user: bjoernOwasp
-  -
-    image: 'putting-in-the-hardware-1721152366854.jpg'
-    caption: 'Putting in the hardware...'
-    user: bjoernOwasp
-  -
-    image: 'everything-up-and-running!-1721152385146.jpg'
-    caption: 'Everything up and running!'
-    user: bjoernOwasp
+  - image: 'sorted-the-pieces,-starting-assembly-process-1721152307290.jpg'
+    caption: Office artifact successfully documented.
+    user: bender
+  - image: building-something-literally-bottom-up-1721152342603.jpg
+    caption: Office artifact successfully documented.
+    user: amy
+  - image: putting-in-the-hardware-1721152366854.jpg
+    caption: Office artifact successfully documented.
+    user: casey
+  - image: everything-up-and-running!-1721152385146.jpg
+    caption: Office artifact successfully documented.
+    user: stan
 ctf:
   showFlagsInNotifications: false
-  showCountryDetailsInNotifications: none # Options: none  name  flag  both
-  countryMapping: ~
+  showCountryDetailsInNotifications: none
+  countryMapping: null
   systemWideNotifications:
-    url: ~ # URL of an external endpoint returning { message, enabled, updatedAt }
-    pollFrequencySeconds: ~ # Required when url is set
+    url: null
+    pollFrequencySeconds: null

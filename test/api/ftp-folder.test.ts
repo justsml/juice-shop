@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -137,7 +132,7 @@ void describe('/ftp', () => {
       .get('/ftp/package.json.bak%2500.pdf')
       .buffer(true)
     assert.equal(res.status, 200)
-    assert.ok(responseText(res).includes('"name": "juice-shop",'))
+    assert.ok(responseText(res).includes('"name": "hard-commerce-lab",'))
   })
 
   void it('GET the package.json.bak file by using Poison Null Byte attack with .md suffix', async () => {
@@ -145,7 +140,7 @@ void describe('/ftp', () => {
       .get('/ftp/package.json.bak%2500.md')
       .buffer(true)
     assert.equal(res.status, 200)
-    assert.ok(responseText(res).includes('"name": "juice-shop",'))
+    assert.ok(responseText(res).includes('"name": "hard-commerce-lab",'))
   })
 
   void it('GET a restricted file directly from file system path on server by tricking route definitions fails with 403 error', async () => {
@@ -188,27 +183,27 @@ void describe('/ftp', () => {
     assert.ok(responseText(res).includes('"epilogue-js": "~0.7",'))
   })
 
-  void it('GET file /ftp/quarantine/juicy_malware_linux_amd_64.url', async () => {
+  void it('GET file /ftp/quarantine/desk_malware_linux_amd_64.url', async () => {
     const res = await request(app)
-      .get('/ftp/quarantine/juicy_malware_linux_amd_64.url')
+      .get('/ftp/quarantine/desk_malware_linux_amd_64.url')
     assert.equal(res.status, 200)
   })
 
-  void it('GET file /ftp/quarantine/juicy_malware_linux_arm_64.url', async () => {
+  void it('GET file /ftp/quarantine/desk_malware_linux_arm_64.url', async () => {
     const res = await request(app)
-      .get('/ftp/quarantine/juicy_malware_linux_arm_64.url')
+      .get('/ftp/quarantine/desk_malware_linux_arm_64.url')
     assert.equal(res.status, 200)
   })
 
-  void it('GET existing file /ftp/quarantine/juicy_malware_macos_64.url', async () => {
+  void it('GET existing file /ftp/quarantine/desk_malware_macos_64.url', async () => {
     const res = await request(app)
-      .get('/ftp/quarantine/juicy_malware_macos_64.url')
+      .get('/ftp/quarantine/desk_malware_macos_64.url')
     assert.equal(res.status, 200)
   })
 
-  void it('GET existing file /ftp/quarantine/juicy_malware_windows_64.exe.url', async () => {
+  void it('GET existing file /ftp/quarantine/desk_malware_windows_64.exe.url', async () => {
     const res = await request(app)
-      .get('/ftp/quarantine/juicy_malware_windows_64.exe.url')
+      .get('/ftp/quarantine/desk_malware_windows_64.exe.url')
     assert.equal(res.status, 200)
   })
 })

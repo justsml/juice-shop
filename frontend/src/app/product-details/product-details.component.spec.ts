@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { provideZoneChangeDetection } from '@angular/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { ProductReviewEditComponent } from '../product-review-edit/product-review-edit.component'

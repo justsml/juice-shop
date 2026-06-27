@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { type DestroyRef, type OutputEmitterRef } from '@angular/core'
 import { type ChallengeService } from '../../Services/challenge.service'
 import { type CookieService } from 'ngy-cookie'

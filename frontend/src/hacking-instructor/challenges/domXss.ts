@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import {
   waitForInputToHaveValue,
   waitForElementsInnerHtmlToBe,
@@ -21,19 +16,19 @@ export const DomXssInstruction: ChallengeInstruction = {
       resolved: waitInMs(8000)
     },
     {
-      text: "Let's start by searching for all products containing `owasp` in their name or description.",
+      text: "Let's start by searching for all products containing `desk` in their name or description.",
       fixture: '#product-search-fixture',
       unskippable: true,
-      resolved: waitForInputToHaveValue('#searchQuery input', 'owasp')
+      resolved: waitForInputToHaveValue('#searchQuery input', 'desk')
     },
     {
       text: 'Now hit enter.',
       fixture: '#product-search-fixture',
       unskippable: true,
-      resolved: waitForElementsInnerHtmlToBe('#searchValue', 'owasp')
+      resolved: waitForElementsInnerHtmlToBe('#searchValue', 'desk')
     },
     {
-      text: 'Nice! You should now see many cool OWASP-related products.',
+      text: 'Nice! You should now see many cool office-supply products.',
       fixture: '#product-search-fixture',
       resolved: waitInMs(8000)
     },
@@ -48,16 +43,16 @@ export const DomXssInstruction: ChallengeInstruction = {
       resolved: waitInMs(15000)
     },
     {
-      text: 'Change your search value into `<h1>owasp` to see if we can inject HTML.',
+      text: 'Change your search value into `<h1>desk` to see if we can inject HTML.',
       fixture: '#product-search-fixture',
       unskippable: true,
-      resolved: waitForInputToHaveValue('#searchQuery input', '<h1>owasp')
+      resolved: waitForInputToHaveValue('#searchQuery input', '<h1>desk')
     },
     {
       text: 'Hit enter again.',
       fixture: '#product-search-fixture',
       unskippable: true,
-      resolved: waitForElementsInnerHtmlToBe('#searchValue', '<h1>owasp</h1>') // Browsers will autocorrect the unclosed tag.
+      resolved: waitForElementsInnerHtmlToBe('#searchValue', '<h1>desk</h1>') // Browsers will autocorrect the unclosed tag.
     },
     {
       text: "Hmm, this doesn't look normal, does it?",

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { MatDividerModule } from '@angular/material/divider'
 import { provideHttpClientTesting } from '@angular/common/http/testing'
@@ -156,15 +151,15 @@ describe('PhotoWallComponent', () => {
     })
 
     it('should use custom blueSky handle if configured', () => {
-        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { social: { blueSkyUrl: 'https://bsky.app/profile/owasp' } } }))
+        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { social: { blueSkyUrl: 'https://bsky.app/profile/bikeshed' } } }))
         component.ngOnInit()
-        expect(component.blueSkyHandle).toBe('@owasp')
+        expect(component.blueSkyHandle).toBe('@bikeshed')
     })
 
     it('should use custom mastodon handle if configured', () => {
-        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { social: { mastodonUrl: 'https://mastodon.social/@owasp' } } }))
+        configurationService.getApplicationConfiguration.mockReturnValue(of({ application: { social: { mastodonUrl: 'https://mastodon/@bikeshed' } } }))
         component.ngOnInit()
-        expect(component.mastodonHandle).toBe('@owasp@mastodon.social')
+        expect(component.mastodonHandle).toBe('@bikeshed@mastodon')
     })
 
     it('should log error while getting application configuration from backend API directly to browser console', () => {
@@ -182,11 +177,11 @@ describe('PhotoWallComponent', () => {
 
     it('should strip trailing slash from blueSky and mastodon URLs', () => {
         configurationService.getApplicationConfiguration.mockReturnValue(of({
-            application: { social: { blueSkyUrl: 'https://bsky.app/profile/owasp/', mastodonUrl: 'https://mastodon.social/@owasp/' } }
+            application: { social: { blueSkyUrl: 'https://bsky.app/profile/bikeshed/', mastodonUrl: 'https://mastodon/@bikeshed/' } }
         }))
         component.ngOnInit()
-        expect(component.blueSkyHandle).toBe('@owasp')
-        expect(component.mastodonHandle).toBe('@owasp@mastodon.social')
+        expect(component.blueSkyHandle).toBe('@bikeshed')
+        expect(component.mastodonHandle).toBe('@bikeshed@mastodon')
     })
 
     it('should not set any social handle when config has no social settings', () => {
@@ -256,7 +251,7 @@ describe('PhotoWallComponent', () => {
         it('should render social share buttons only when matching handles are configured', () => {
             photoWallService.get.mockReturnValue(of([{ imagePath: 'a.png', caption: 'A' }]))
             configurationService.getApplicationConfiguration.mockReturnValue(of({
-                application: { social: { twitterUrl: 'https://twitter.com/juice', blueSkyUrl: 'https://bsky.app/profile/juice', mastodonUrl: 'https://mastodon.social/@juice' } }
+                application: { social: { twitterUrl: 'https://twitter.com/juice', blueSkyUrl: 'https://bsky.app/profile/juice', mastodonUrl: 'https://mastodon/@juice' } }
             }))
             component.ngOnInit()
             fixture.detectChanges()

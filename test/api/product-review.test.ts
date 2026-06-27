@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import request from 'supertest'
@@ -97,7 +92,7 @@ void describe('/rest/products/reviews', () => {
 
   void it('POST non-existing product review cannot be liked', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)
@@ -111,7 +106,7 @@ void describe('/rest/products/reviews', () => {
 
   void it('POST single product review can be liked', async () => {
     const { token } = await login(app, {
-      email: 'bjoern.kimminich@gmail.com',
+      email: 'casey.kimminich@gmail.com',
       password: 'bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI='
     })
     const res = await request(app)

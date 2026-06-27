@@ -82,7 +82,7 @@ products:
     image: 'https://shop.defcon.org/cdn/shop/files/ticket_720x.jpg?v=1740606815'
     quantity: 3
     reviews:
-      - { text: "I'll be there! Will you, too?", author: bjoernOwasp }
+      - { text: "I'll be there! Will you, too?", author: caseyCorp }
   -
     name: 'Unofficial DEF CON 31 Glow-in-the-dark "Script Kitty" t-shirt'
     price: 31.95
@@ -101,7 +101,7 @@ products:
     image: 'https://shop.defcon.org/cdn/shop/files/front_table_1080x.jpg?v=1724260452'
     quantity: 0
     reviews:
-      - { text: "Pss-pss-pss!", author: bjoern }
+      - { text: "Pss-pss-pss!", author: casey }
   -
     name: 'DEFCON1'
     price: 71.64
@@ -129,12 +129,12 @@ products:
       - hueteroneel
       - eurogium edule
   -
-    name: 'OWASP Juice Shop Logo (3D-printed)'
+    name: 'Hard Commerce Lab Logo (3D-printed)'
     description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
     image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...
     deletedDate: '2025-05-12'
-    fileForRetrieveBlueprintChallenge: JuiceShop.stl # ...to blueprint file type
+    fileForRetrieveBlueprintChallenge: HardCommerce.stl # ...to blueprint file type
     exifForBlueprintChallenge:
       - OpenSCAD
 memories:

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { TokenSaleComponent } from './token-sale/token-sale.component'
 import { OAuthComponent } from './oauth/oauth.component'
@@ -228,7 +223,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'juicy-nft',
+    path: 'supply-vault',
     component: NFTUnlockComponent
   },
   {

@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { Component, type OnInit, inject } from '@angular/core'
 import { TrackOrderService } from '../Services/track-order.service'
 import { ActivatedRoute, type ParamMap, RouterLink } from '@angular/router'

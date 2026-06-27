@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-label="Office supply item">
+  <rect width="600" height="420" rx="28" fill="#f8fafc"/>
+  <rect x="120" y="100" width="360" height="220" rx="18" fill="#123456"/>
+  <rect x="156" y="132" width="288" height="44" rx="8" fill="#ffcc00"/>
+  <rect x="156" y="198" width="210" height="24" rx="6" fill="#94a3b8"/>
+  <rect x="156" y="240" width="260" height="24" rx="6" fill="#94a3b8"/>
+  <circle cx="430" cy="278" r="38" fill="#ff3e3e"/>
+</svg>

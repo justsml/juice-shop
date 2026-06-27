@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
@@ -231,20 +226,20 @@ describe('AboutComponent', () => {
 
         it('should not render the social navigation when no social URLs are configured', () => {
             const compiled: HTMLElement = fixture.nativeElement
-            expect(compiled.querySelector('nav.social-nav')).toBeNull()
-            expect(compiled.querySelector('ul.social')).toBeNull()
+            expect(compiled.querySelector('nav-nav')).toBeNull()
+            expect(compiled.querySelector('ul')).toBeNull()
         })
 
         it('should render social navigation only with links for the configured social URLs', () => {
             const f = renderWithSocial({ twitterUrl: 'https://twitter.example', slackUrl: 'https://slack.example' })
             const compiled: HTMLElement = f.nativeElement
 
-            const nav = compiled.querySelector('nav.social-nav')
+            const nav = compiled.querySelector('nav-nav')
             expect(nav).toBeTruthy()
-            const items = compiled.querySelectorAll('ul.social > li')
+            const items = compiled.querySelectorAll('ul > li')
             expect(items.length).toBe(2)
 
-            const hrefs = Array.from(compiled.querySelectorAll('ul.social a')).map(a => a.getAttribute('href'))
+            const hrefs = Array.from(compiled.querySelectorAll('ul a')).map(a => a.getAttribute('href'))
             expect(hrefs).toContain('https://twitter.example')
             expect(hrefs).toContain('https://slack.example')
             expect(hrefs).not.toContain(null)
@@ -256,15 +251,15 @@ describe('AboutComponent', () => {
                 slackUrl: 'S', redditUrl: 'R', pressKitUrl: 'P', nftUrl: 'N'
             })
             const compiled: HTMLElement = f.nativeElement
-            expect(compiled.querySelectorAll('ul.social > li').length).toBe(8)
+            expect(compiled.querySelectorAll('ul > li').length).toBe(8)
             for (const url of ['B', 'M', 'T', 'F', 'S', 'R', 'P', 'N']) {
-                expect(compiled.querySelector(`ul.social a[href="${url}"]`)).toBeTruthy()
+                expect(compiled.querySelector(`ul a[href="${url}"]`)).toBeTruthy()
             }
         })
 
         it('should mark every social link to open in a new tab with safe rel attribute', () => {
             const f = renderWithSocial({ twitterUrl: 'https://twitter.example' })
-            const link = f.nativeElement.querySelector('ul.social a') as HTMLAnchorElement
+            const link = f.nativeElement.querySelector('ul a') as HTMLAnchorElement
             expect(link.getAttribute('target')).toBe('_blank')
             expect(link.getAttribute('rel')).toBe('noopener noreferrer')
             expect(link.getAttribute('aria-label')).toBe('Visit our Twitter page')

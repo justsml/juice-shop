@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
-
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import validateConfig, {
@@ -17,7 +12,7 @@ import validateConfig, {
   checkNecessaryExtraKeysOnSpecialProducts,
   checkForIllogicalCombos
 } from '../../lib/startup/validateConfig'
-import type { Memory, Product } from '@juice-shop/lib/config.schema'
+import type { Memory, Product } from '@juice-commerce/lib/config.schema'
 
 void describe('configValidation', () => {
   const COMMON_PRODUCT = { price: 1, description: 'foo', image: 'bar.jpg' }
@@ -212,7 +207,7 @@ void describe('configValidation', () => {
     void it('should accept a valid config', () => {
       const memories: Memory[] = [
         { image: 'bla.png', caption: 'Bla', user: 'admin' },
-        { image: 'blubb.png', caption: 'Blubb', user: 'bjoern' }
+        { image: 'blubb.png', caption: 'Blubb', user: 'casey' }
       ]
 
       assert.equal(checkMinimumRequiredNumberOfMemories(memories), true)
@@ -239,7 +234,7 @@ void describe('configValidation', () => {
     const config = {
       application: {
         domain: 'juice-b.ox',
-        name: 'OWASP Juice Box',
+        name: 'The community Juice Box',
         welcomeBanner: { showOnFirstStart: false }
       },
       hackingInstructor: { avatarImage: 'juicyEvilWasp.png' }
@@ -312,7 +307,7 @@ void describe('configValidation', () => {
     const config = {
       application: {
         domain: 42,
-        id: 'OWASP Juice Box',
+        id: 'The community Juice Box',
         welcomeBanner: { showOnFirstStart: 'yes' }
       },
       hackingInstructor: { avatarImage: true }

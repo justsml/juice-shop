@@ -8,7 +8,7 @@
     - 'You need to understand what happens "behind the scenes", so make sure to use your DevTools or a proxy to inspect network traffic.'
     - 'Look for an API endpoint that already returns some user information.'
     - 'An overly generic solution for data retrieval can backfire if not properly safeguarded.'
-  mitigationUrl: 'https://owasp.org/API-Security/editions/2019/en/0xa3-excessive-data-exposure'
+  mitigationUrl: 'https://security.example/api-guide'
   key: passwordHashLeakChallenge
 -
   name: 'API-only XSS'
@@ -21,7 +21,7 @@
     - 'You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.'
     - 'A matrix of known data entities and their supported HTTP verbs through the API can help you here.'
     - 'Careless developers might have exposed API methods that the client does not even need.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: restfulXssChallenge
   disabledEnv:
     - Docker
@@ -36,7 +36,7 @@
     - 'Normally, server log files are written to disk on server side and are not accessible from the outside.'
     - 'One particular file found in the folder you might already have found during the "Access a confidential document" challenge might give you an idea who is interested in such a public exposure.'
     - 'Drilling down one level into the file system might not be sufficient.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: accessLogDisclosureChallenge
 -
   name: 'Admin Registration'
@@ -47,7 +47,7 @@
     - 'You have to assign the unassignable.'
     - 'Register as an ordinary user to learn what API endpoints are involved in this use case.'
     - 'Think of the simplest possible implementations of a distinction between regular users and administrators.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: registerAdminChallenge
 -
   name: 'Admin Section'
@@ -62,7 +62,7 @@
     - 'Alternatively, you can try to find a reference or clue within the parts of the application that are not usually visible in the browser.'
     - 'It is probably just slightly harder to find and gain access to than the score board link.'
     - 'There is some access control in place, but there are at least three ways to bypass it.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: adminSectionChallenge
   tutorial:
     order: 8
@@ -77,26 +77,26 @@
   hints:
     - 'Look out for a tweet praising new functionality of the web shop. Then find a third party vulnerability associated with it.'
     - 'Find all places in the application where file uploads are possible.'
-    - 'For at least one of these, the Juice Shop is depending on a library that suffers from an arbitrary file overwrite vulnerability.'
-    - 'You can find a hint toward the underlying vulnerability in the @owasp_juiceshop Twitter timeline.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html'
+    - 'For at least one of these, the the storefront is depending on a library that suffers from an arbitrary file overwrite vulnerability.'
+    - 'You can find a hint toward the underlying vulnerability in the @supply_desk_daily Twitter timeline.'
+  mitigationUrl: 'https://security.example/guide'
   key: fileWriteChallenge
   disabledEnv:
     - Docker
     - Heroku
 -
-  name: 'Bjoern''s Favorite Pet'
+  name: 'Casey''s Favorite Pet'
   category: 'Broken Authentication'
   tags:
     - OSINT
-  description: 'Reset the password of Bjoern''s OWASP account via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
+  description: 'Reset the password of Casey''s corporate account via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
   difficulty: 3
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   hints:
-    - 'Hints to the answer to Bjoern’s question can be found by looking him up on the Internet.'
-    - 'More precisely, Bjoern might have accidentally (?) doxxed himself by mentioning his security answer on at least one occasion where a camera was running.'
+    - 'Hints to the answer to Casey’s question can be found by looking him up on the Internet.'
+    - 'More precisely, Casey might have accidentally (?) doxxed himself by mentioning his security answer on at least one occasion where a camera was running.'
     - 'Brute forcing the answer might be very well possible with a sufficiently extensive list of common pet names.'
-  key: resetPasswordBjoernOwaspChallenge
+  key: resetPasswordCaseyCorpChallenge
 -
   name: 'Blockchain Hype'
   category: 'Security through Obscurity'
@@ -166,10 +166,10 @@
     - Danger Zone
   description: 'Perform a Remote Code Execution that would keep a less hardened application busy <em>forever</em>.'
   difficulty: 5
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   hints:
     - 'The feature you need to exploit for this challenge is not directly advertised anywhere.'
-    - 'As the Juice Shop is written in pure Javascript, there is one data format that is most probably used for serialization.'
+    - 'As the the storefront is written in pure Javascript, there is one data format that is most probably used for serialization.'
     - 'You should try to make the server busy for all eternity.'
     - 'The challenge will be solved if you manage to trigger the protection of the application against a very specific DoS attack vector.'
     - 'Similar to the "Let the server sleep for some time" challenge (which accepted nothing but NoSQL Injection as a solution) this challenge will only accept proper RCE as a solution. It cannot be solved by simply hammering the server with requests. That would probably just kill your server instance.'
@@ -187,7 +187,7 @@
   hints:
     - 'After finding a CAPTCHA bypass, write a script that automates feedback submission. Or open many browser tabs and be really quick.'
     - 'You could prepare 10 browser tabs, solving every CAPTCHA and filling out the each feedback form. Then you’d need to very quickly switch through the tabs and submit the forms in under 20 seconds total.'
-    - 'Should the Juice Shop ever decide to change the challenge into "Submit 100 or more customer feedbacks within 60 seconds" or worse, you’d probably have a hard time keeping up with any tab-switching approach.'
+    - 'Should the the storefront ever decide to change the challenge into "Submit 100 or more customer feedbacks within 60 seconds" or worse, you’d probably have a hard time keeping up with any tab-switching approach.'
     - 'Investigate closely how the CAPTCHA mechanism works and try to find either a bypass or some automated way of solving it dynamically.'
     - 'Wrap this into a script (in whatever programming language you prefer) that repeats this 10 times.'
   mitigationUrl: ~
@@ -201,7 +201,7 @@
     - 'In previous releases this challenge was wrongly accused of being based on CSRF.'
     - 'It might also have been put into the Improper Input Validation category.'
     - 'Bender’s current password is so strong that brute force, rainbow table or guessing attacks will probably not work.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: changePasswordBenderChallenge
 -
   name: 'Christmas Special'
@@ -214,7 +214,7 @@
     - 'Try to craft an attack string that makes deleted products visible again.'
     - 'You need to get the deleted product into your shopping cart and trigger the Checkout.'
     - 'Neither of the above can be achieved through the application frontend and it might even require (half-)Blind SQL Injection.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: christmasSpecialChallenge
 -
   name: 'CSP Bypass'
@@ -228,7 +228,7 @@
     - 'Find a screen in the application that looks subtly odd and dated compared with all other screens.'
     - 'Before trying any XSS attacks, you should understand how the page is setting its Content Security Policy.'
     - 'For the subsequent XSS, make good use of the flaws in the homegrown sanitization based on a RegEx!'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: usernameXssChallenge
   disabledEnv:
     - Docker
@@ -241,10 +241,10 @@
   description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src="javascript:alert(`xss`)"&gt;</code> bypassing a <i>client-side</i> security mechanism.'
   difficulty: 3
   hints:
-    - 'There are only some input fields in the Juice Shop forms that validate their input.'
+    - 'There are only some input fields in the the storefront forms that validate their input.'
     - 'Even less of these fields are persisted in a way where their content is shown on another screen.'
     - 'Bypassing client-side security can typically be done by either disabling it on the client (i.e. in the browser by manipulating the DOM tree) or by ignoring it completely and interacting with the backend instead.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: persistedXssUserChallenge
   disabledEnv:
     - Docker
@@ -272,7 +272,7 @@
   hints:
     - 'Look for an input field where its content appears in the HTML when its form is submitted.'
     - 'This challenge is almost indistinguishable from "Perform a reflected XSS attack" if you do not look "under the hood" to find out what the application actually does with the user input.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: localXssChallenge
   tutorial:
     order: 2
@@ -287,7 +287,7 @@
     - 'Craft a UNION SELECT attack string to join the relevant data from any such identified system table into the original result.'
     - 'You might have to tackle some query syntax issues step-by-step, basically hopping from one error to the next.'
     - 'As with "Order the Christmas special offer of 2014" this cannot be achieved through the application frontend.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: dbSchemaChallenge
 -
   name: 'Deprecated Interface'
@@ -302,7 +302,7 @@
     - 'The old B2B interface was replaced with a more modern version recently.'
     - 'When deprecating the old interface, not all of its parts were cleanly removed from the code base.'
     - 'Simply using the deprecated interface suffices to solve this challenge. No attack or exploit is necessary.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: deprecatedInterfaceChallenge
 -
   name: 'Easter Egg'
@@ -327,7 +327,7 @@
     - 'Try to find and attack an endpoint that responds with user information. SQL Injection is not the solution here.'
     - 'What ways are there to access data from a web application cross-domain?'
     - 'This challenge uses an old way which is no longer recommended.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/XS_Leaks_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: emailLeakChallenge
 -
   name: 'Empty User Registration'
@@ -336,7 +336,7 @@
   difficulty: 2
   hints:
     - 'Consider intercepting and playing with the request payload.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: emptyUserRegistration
 -
   name: 'Ephemeral Accountant'
@@ -346,10 +346,10 @@
   hints:
     - 'Try to create the needed user "out of thin air".'
     - 'The user literally needs to be ephemeral as in "lasting for only a short time".'
-    - 'Registering normally with the user’s email address will then obviously not solve this challenge. The Juice Shop will not even let you register as acc0unt4nt@juice-sh.op, as this would make the challenge unsolvable for you.'
-    - 'Getting the user into the database some other way will also fail to solve this challenge. In case you somehow managed to do so, you need to restart the Juice Shop application in order to wipe the database and make the challenge solvable again.'
+    - 'Registering normally with the user’s email address will then obviously not solve this challenge. The the storefront will not even let you register as acc0unt4nt@juice-sh.op, as this would make the challenge unsolvable for you.'
+    - 'Getting the user into the database some other way will also fail to solve this challenge. In case you somehow managed to do so, you need to restart the the storefront application in order to wipe the database and make the challenge solvable again.'
     - 'The fact that this challenge is in the Injection category should already give away the intended approach.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: ephemeralAccountantChallenge
 -
   name: 'Error Handling'
@@ -363,7 +363,7 @@
     - 'This challenge actually triggers from various possible error conditions.'
     - 'You can try to submit bad input to forms to provoke an improper error handling.'
     - 'Tampering with URL paths or parameters might also trigger an unforeseen error.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: errorHandlingChallenge
 -
   name: 'Expired Coupon'
@@ -398,7 +398,7 @@
   hints:
     - 'Once you found admin section of the application, this challenge is almost trivial.'
     - 'Nothing happens when you try to delete feedback entries? Check the JavaScript console for errors!'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: feedbackChallenge
 -
   name: 'Forged Coupon'
@@ -413,7 +413,7 @@
     - 'One viable solution would be to reverse-engineer how coupon codes are generated and craft your own 80% coupon by using the same (or at least similar) implementation.'
     - 'Another possible solution might be harvesting as many previous coupon as possible and look for patterns that might give you a leverage for a brute force attack.'
     - 'If all else fails, you could still try to blindly brute force the coupon code field before checkout.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: forgedCouponChallenge
 -
   name: 'Forged Feedback'
@@ -425,8 +425,8 @@
   hints:
     - 'You can solve this by tampering with the user interface or by intercepting the communication with the RESTful backend.'
     - 'To find the client-side leverage point, closely analyze the HTML form used for feedback submission.'
-    - 'The backend-side leverage point is similar to some of the XSS challenges found in OWASP Juice Shop.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+    - 'The backend-side leverage point is similar to some of the XSS challenges found in the storefront.'
+  mitigationUrl: 'https://security.example/guide'
   key: forgedFeedbackChallenge
   tutorial:
     order: 11
@@ -440,7 +440,7 @@
     - 'This challenge can be solved by using developers tool of your browser or with tools like postman.'
     - 'Analyze the form used for review submission and try to find a leverage point.'
     - 'This challenge is pretty similar to "Post some feedback in another user’s name" challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: forgedReviewChallenge
 -
   name: 'Forged Signed JWT'
@@ -450,11 +450,11 @@
   hints:
     - 'This challenge is explicitly not about acquiring the RSA private key used for JWT signing.'
     - 'The three generic hints from Forge an essentially unsigned JWT token also help with this challenge.'
-    - 'Instead of enforcing no encryption to be applied, try to apply a more sophisticated exploit against the JWT libraries used in the Juice Shop.'
+    - 'Instead of enforcing no encryption to be applied, try to apply a more sophisticated exploit against the JWT libraries used in the the storefront.'
     - 'Getting your hands on the public RSA key the application employs for its JWTs is mandatory for this challenge.'
     - 'Finding the corresponding private key should actually be impossible, but that obviously doesn’t make this challenge unsolvable.'
     - 'Make sure your JWT is URL safe!'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: jwtForgedChallenge
   disabledEnv:
     - Windows
@@ -498,7 +498,7 @@
     - 'This challenge has nothing to do with mistyping web domains. There is no conveniently misplaced file helping you with this one either. Or is there?'
     - 'This challenge has nothing to do with URLs or domains.'
     - 'Other than for its legacy companion, combing through the package.json.bak does not help for this challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: typosquattingAngularChallenge
 -
   name: 'GDPR Data Erasure'
@@ -508,9 +508,9 @@
   hints:
     - 'Turns out that something is technically and legally wrong with the implementation of the "right to be forgotten" for users.'
     - 'Trying out the Request Data Erasure functionality might be interesting, but cannot help you solve this challenge in real time.'
-    - 'If you have solved the challenge Retrieve a list of all user credentials via SQL Injection you might have already retrieved some information about how the Juice Shop "deletes" users upon their request.'
-    - 'What the Juice Shop does here is totally incompliant with GDPR. Luckily a 4% fine on a gross income of 0$ is still 0$.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html'
+    - 'If you have solved the challenge Retrieve a list of all user credentials via SQL Injection you might have already retrieved some information about how the the storefront "deletes" users upon their request.'
+    - 'What the the storefront does here is totally incompliant with GDPR. Luckily a 4% fine on a gross income of 0$ is still 0$.'
+  mitigationUrl: 'https://security.example/guide'
   key: ghostLoginChallenge
 -
   name: 'GDPR Data Theft'
@@ -522,7 +522,7 @@
     - 'You should not try to steal data from a "vanilla" user who never even ordered something at the shop.'
     - 'As everything about this data export functionality happens on the server-side, it won’t be possible to just tamper with some HTTP requests to solve this challenge.'
     - 'Inspecting various server responses which contain user-specific data might give you a clue about the mistake the developers made.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: dataExportChallenge
 -
   name: 'HTTP-Header XSS'
@@ -535,7 +535,7 @@
     - 'Finding a piece of displayed information that could originate from an HTTP header is part of this challenge.'
     - 'You might have to look into less common or even proprietary HTTP headers to find the leverage point.'
     - 'Adding insult to injury, the HTTP header you need will never be sent by the application on its own.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: httpHeaderXssChallenge
   disabledEnv:
     - Docker
@@ -554,7 +554,7 @@
     - 'Deduce from all available information (e.g. the package.json.bak) how the application encrypts and decrypts your hacking progress.'
     - 'Other than the user’s passwords, the hacking progress involves an additional secret during its encryption.'
     - 'What would be a really stupid mistake a developer might make when choosing such a secret?'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: continueCodeChallenge
 -
   name: 'Leaked Access Logs'
@@ -568,7 +568,7 @@
     - 'A very popular help platform for developers might contain breadcrumbs towards solving this challenge.'
     - 'The actual log file was copied & paste onto a platform often used to share data quickly with externals or even just internal peers.'
     - 'Once you found and harvested the important piece of information from the log, you could employ a technique called Password Spraying to solve this challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Credential_Stuffing_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: dlpPasswordSprayingChallenge
 -
   name: 'Leaked Unsafe Product'
@@ -595,7 +595,7 @@
     - 'This challenge has nothing to do with mistyping web domains. Investigate the forgotten developer''s backup file instead.'
     - 'Investigating the forgotten developer’s backup file might bring some insight.'
     - '"Malicious packages in npm" is a worthwhile read on Ivan Akulov’s blog.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: typosquattingNpmChallenge
 -
   name: 'Login Admin'
@@ -611,7 +611,7 @@
     - 'You might be lucky with a dedicated attack pattern even if you have no clue about the admin email address.'
     - 'If you harvested the admin’s password hash, you can of course try to attack that instead of using SQL Injection.'
     - 'Alternatively you can solve this challenge as a combo with the Log in with the administrator’s user credentials without previously changing them or applying SQL Injection challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: loginAdminChallenge
   tutorial:
     order: 7
@@ -642,23 +642,23 @@
     - 'You need to know (or smart-guess) Bender’s email address so you can launch a targeted attack.'
     - 'Bender''s password hash might not help you very much.'
     - 'In case you try some other approach than SQL Injection, you will notice that Bender’s password hash is not very useful.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: loginBenderChallenge
   tutorial:
     order: 13
 -
-  name: 'Login Bjoern'
+  name: 'Login Casey'
   category: 'Broken Authentication'
   tags:
     - Code Analysis
-  description: 'Log in with Bjoern''s Gmail account <i>without</i> previously changing his password, applying SQL Injection, or hacking his Google account.'
+  description: 'Log in with Casey''s Gmail account <i>without</i> previously changing his password, applying SQL Injection, or hacking his Google account.'
   difficulty: 4
   hints:
-    - 'The security flaw behind this challenge is 100% OWASP Juice Shop''s fault and 0% Google''s.'
-    - 'One way to light up this challenge in green on the score board, is to be Bjoern Kimminich. In that case, just log in with your Google account to automatically solve this challenge! Congratulations!'
-    - 'Most likely you are not Bjoern Kimminich, so instead you might want to take detailed look into how the OAuth login with Google is implemented.'
+    - 'The security flaw behind this challenge is 100% the storefront''s fault and 0% Google''s.'
+    - 'One way to light up this challenge in green on the score board, is to be Casey Morgan. In that case, just log in with your Google account to automatically solve this challenge! Congratulations!'
+    - 'Most likely you are not Casey Morgan, so instead you might want to take detailed look into how the OAuth login with Google is implemented.'
     - 'It could bring you some insight to register with your own Google account and analyze closely what happens behind the scenes.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: oauthUserPasswordChallenge
 -
   name: 'Login Jim'
@@ -671,7 +671,7 @@
     - 'The challenge description probably gave away what form you should attack.'
     - 'You need to know (or smart-guess) Jim’s email address so you can launch a targeted attack.'
     - 'If you harvested Jim’s password hash, you can try to attack that instead of using SQL Injection.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: loginJimChallenge
   tutorial:
     order: 12
@@ -702,7 +702,7 @@
     - 'To prevent abuse the password for the support team account itself is actually very strong.'
     - 'To allow easy access during an incident, the support team utilizes a 3rd party tool which every support engineer can access to get the current account password from.'
     - 'While it is also possible to use SQL Injection to log in as the support team, this will not solve the challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: loginSupportChallenge
 -
   name: 'Manipulate Basket'
@@ -713,7 +713,7 @@
     - 'Have an eye on the HTTP traffic while placing products in the shopping basket.'
     - 'Adding more instances of the same product to someone else’s basket does not qualify as a solution. The same goes for stealing from someone else’s basket.'
     - 'This challenge requires a bit more sophisticated tampering than others of the same ilk.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: basketManipulateChallenge
 -
   name: 'Misplaced Signature File'
@@ -727,7 +727,7 @@
     - 'You need to trick a security mechanism into thinking that the file you want has a valid file type.'
     - 'If you solved one of the other four file access challenges, you already know where the SIEM signature file is located.'
     - 'Simply reuse the trick that already worked for the files above.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: misplacedSignatureFileChallenge
 -
   name: 'Multiple Likes'
@@ -764,10 +764,10 @@
   difficulty: 4
   hints:
     - 'This challenge is essentially a stripped-down Denial of Service (DoS) attack.'
-    - 'As stated in the Architecture overview, OWASP Juice Shop uses a MongoDB derivate as its NoSQL database.'
+    - 'As stated in the Architecture overview, the storefront uses a MongoDB derivate as its NoSQL database.'
     - 'The categorization into the NoSQL Injection category totally gives away the expected attack vector for this challenge. Trying any others will not solve the challenge, even if they might yield the same result.'
     - 'In particular, flooding the application with requests will not solve this challenge. That would probably just kill your server instance.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: noSqlCommandChallenge
   disabledEnv:
     - Docker
@@ -784,7 +784,7 @@
     - 'This challenge requires a classic Injection attack.'
     - 'Find an API endpoint with the intent of delivering a single order to the user and work with that.'
     - 'Reading up on how MongoDB queries work is really helpful here.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: noSqlOrdersChallenge
   disabledEnv:
     - Docker
@@ -798,7 +798,7 @@
     - 'Take a close look on how the equivalent of UPDATE-statements in MongoDB work.'
     - 'This challenge requires another classic Injection attack.'
     - 'It is also worth looking into how Query Operators work in MongoDB.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: noSqlReviewsChallenge
 -
   name: 'Outdated Allowlist'
@@ -811,7 +811,7 @@
     - 'When removing references to those addresses from the code the developers have been a bit sloppy.'
     - 'More particular, they have been sloppy in a way that even the Angular Compiler was not able to clean up after them automatically.'
     - 'It is of course not sufficient to just visit any of the crypto currency links directly to solve the challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: redirectCryptoCurrencyChallenge
 -
   name: 'Password Strength'
@@ -826,7 +826,7 @@
     - 'Guessing might work just fine.'
     - 'If you harvested the admin’s password hash, you can try to attack that.'
     - 'In case you use some hacker tool, you can also go for a brute force attack using a generic password list.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: weakPasswordChallenge
   tutorial:
     order: 9
@@ -838,7 +838,7 @@
   hints:
     - 'You literally need to make the shop owe you any amount of money.'
     - 'Investigate the shopping basket closely to understand how it prevents you from creating orders that would fulfil the challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: negativeOrderChallenge
 -
   name: 'Premium Paywall'
@@ -852,7 +852,7 @@
     - 'There is no inappropriate, self-written or misconfigured cryptographic library to be exploited here.'
     - 'How much protection does a sturdy top-quality door lock add to your house if you put the key under the door mat? Or hide the key in the nearby plant pot? Or tape the key to the underside of the mailbox?'
     - 'Once more: You do not have to pay anything to unlock this challenge!'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: premiumPaywallChallenge
 -
   name: 'Privacy Policy'
@@ -890,12 +890,12 @@
 -
   name: 'Product Tampering'
   category: 'Broken Access Control'
-  description: 'Change the <code>href</code> of the link within the <a href="/#/search?q=OWASP SSL Advanced Forensic Tool (O-Saft)">OWASP SSL Advanced Forensic Tool (O-Saft)</a> product description into <i>https://owasp.slack.com</i>.'
+  description: 'Change the <code>href</code> of the link within the <a href="/#/search?q=Advanced Shelf Forensics Tool (A-Saft)">Advanced Shelf Forensics Tool (A-Saft)</a> product description into <i>https://bike-shed.example/procurement</i>.'
   difficulty: 3
   hints:
     - 'Theoretically there are three possible ways to beat this challenge: a) broken admin functionality, b) holes in RESTful API or c) possibility for SQL Injection.'
     - 'In practice two of these three ways should turn out to be dead ends.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: changeProductChallenge
 -
   name: 'Reflected XSS'
@@ -909,7 +909,7 @@
   hints:
     - 'Look for a url parameter where its value appears in the page it is leading to.'
     - 'Try probing for XSS vulnerabilities by submitting text wrapped in an HTML tag which is easy to spot on screen, e.g. <h1> or <strike>.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: reflectedXssChallenge
   tutorial:
     order: 5
@@ -926,7 +926,7 @@
     - 'The obvious repetition in the User Registration form is the Repeat Password field.'
     - 'Try to register with either an empty or different value in Repeat Password.'
     - 'You can solve this challenge by cleverly interacting with the UI or bypassing it altogether.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: passwordRepeatChallenge
 -
   name: 'Reset Bender''s Password'
@@ -941,23 +941,23 @@
     - 'Hints to the answer to Bender’s question can be found in publicly available information on the Internet.'
     - 'If a seemingly correct answer is not accepted, you might just need to try some alternative spelling.'
     - 'Brute forcing the answer should be next to impossible.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: resetPasswordBenderChallenge
 -
-  name: 'Reset Bjoern''s Password'
+  name: 'Reset Casey''s Password'
   category: 'Broken Authentication'
   tags:
     - OSINT
-  description: 'Reset the password of Bjoern''s internal account via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
+  description: 'Reset the password of Casey''s internal account via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
   difficulty: 5
   hints:
     - 'Nothing a little bit of Facebook stalking couldn''t reveal. Might involve a historical twist.'
-    - 'Other than with his OWASP account, Bjoern was a bit less careless with his choice of security and answer to his internal account.'
-    - 'Bjoern chose to answer his chosen question truthfully but tried to make it harder for attackers by applying sort of a historical twist.'
-    - 'Again, hints to the answer to Bjoern’s question can be found by looking him up on the Internet.'
+    - 'Other than with his corporate account, Casey was a bit less careless with his choice of security and answer to his internal account.'
+    - 'Casey chose to answer his chosen question truthfully but tried to make it harder for attackers by applying sort of a historical twist.'
+    - 'Again, hints to the answer to Casey’s question can be found by looking him up on the Internet.'
     - 'Brute forcing the answer should be next to impossible.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
-  key: resetPasswordBjoernChallenge
+  mitigationUrl: 'https://security.example/guide'
+  key: resetPasswordCaseyChallenge
 -
   name: 'Reset Jim''s Password'
   category: 'Broken Authentication'
@@ -970,7 +970,7 @@
     - 'Jim picked one of the worst security questions and chose to answer it truthfully.'
     - 'As Jim is a celebrity, the answer to his question is quite easy to find in publicly available information on the internet.'
     - 'Even brute forcing the answer should be possible with the right kind of word list.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: resetPasswordJimChallenge
 -
   name: 'Reset Morty''s Password'
@@ -985,7 +985,7 @@
     - 'You can assume that Morty answered his security question truthfully but employed some obfuscation to make it more secure.'
     - 'Morty’s answer is less than 10 characters long and does not include any special characters.'
     - 'Unfortunately, Forgot your password? is protected by a rate limiting mechanism that prevents brute forcing. You need to beat this somehow.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: resetPasswordMortyChallenge
 -
   name: 'Retrieve Blueprint'
@@ -1008,9 +1008,9 @@
   hints:
     - 'Reverse engineering something bad can make good things happen.'
     - 'Using whatever you find inside the malware directly will not do you any good.'
-    - 'For this to count as an SSRF attack you need to make the Juice Shop server attack itself.'
+    - 'For this to count as an SSRF attack you need to make the the storefront server attack itself.'
     - 'Do not try to find the source code for the malware on GitHub. Take it apart with classic reverse-engineering techniques instead.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: ssrfChallenge
 -
   name: 'SSTi'
@@ -1019,11 +1019,11 @@
     - Contraption
     - Danger Zone
     - Code Analysis
-  description: 'Infect the server with juicy malware by abusing arbitrary command execution.'
+  description: 'Infect the server with desk malware by abusing arbitrary command execution.'
   difficulty: 6
   hints:
     - '"SSTi" is a clear indicator that this has nothing to do with anything Angular. Also, make sure to use only our non-malicious malware.'
-    - 'You can find the juicy malware via a very obvious Google search or by stumbling into a very ill-placed quarantine folder with the necessary URLs in it.'
+    - 'You can find the desk malware via a very obvious Google search or by stumbling into a very ill-placed quarantine folder with the necessary URLs in it.'
     - 'Making the server download and execute the malware is key to solving this challenge.'
     - 'For this challenge you do not have to reverse engineer the malware in any way. That will be required later to solve the "Request a hidden resource on server through server" challenge.'
   mitigationUrl: ~
@@ -1055,7 +1055,7 @@
     - 'Undoubtedly you want to read our security policy before conducting any research on our application.'
     - 'As one of the good guys, would you just start attacking an application without consent of the owner?'
     - 'You also might want to read the security policy or any bug bounty program that is in place.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: securityPolicyChallenge
 -
   name: 'Server-side XSS Protection'
@@ -1070,7 +1070,7 @@
     - 'The attack payload <iframe src="javascript:alert(`xss)">` will not be rejected by any validator but stripped from the comment before persisting it.'
     - 'Look for possible dependencies related to input processing in the package.json.bak you harvested earlier.'
     - 'If an XSS alert shows up but the challenge does not appear as solved on the Score Board, you might not have managed to put the exact attack string <iframe src="javascript:alert(`xss)">` into the database?'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: persistedXssFeedbackChallenge
   disabledEnv:
     - Docker
@@ -1099,7 +1099,7 @@
   hints:
     - 'Your attack payload must not trigger the protection against too many iterations and infinite loops.'
     - 'This challenge uses the same leverage point as the "Perform a Remote Code Execution that would keep a less hardened application busy forever" challenge.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: rceOccupyChallenge
   disabledEnv:
     - Docker
@@ -1127,7 +1127,7 @@
     - 'As always, first learn how the feature under attack is used and behaves under normal conditions.'
     - 'Make sure you understand how 2FA with TOTP (time-based one-time password) works and which part of it is the critically sensitive one.'
     - 'Solving the challenge "Retrieve a list of all user credentials via SQL Injection" before tackling this one will definitely help. But it will not carry you all the way.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: twoFactorAuthUnsafeSecretStorageChallenge
 -
   name: 'Unsigned JWT'
@@ -1140,7 +1140,7 @@
     - 'A JWT is only given to users who have logged in. They have a limited validity, so better do not dawdle.'
     - 'Try to convince the site to give you a valid token with the required payload while downgrading to no encryption at all.'
     - 'Make sure your JWT is URL safe!'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: jwtUnsignedChallenge
 -
   name: 'Upload Size'
@@ -1151,7 +1151,7 @@
     - 'You can attach a small file to the "Complaint" form. Investigate how this upload actually works.'
     - 'First you should try to understand how the file upload is actually handled on the client and server side.'
     - 'With this understanding you need to find a "weak spot" in the right place and have to craft an exploit for it.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: uploadSizeChallenge
 -
   name: 'Upload Type'
@@ -1161,7 +1161,7 @@
   hints:
     - 'You can attach a PDF or ZIP file to the "Complaint" form. Investigate how this upload actually works.'
     - 'If you solved the "Upload a file larger than 100 kB" challenge, you should try to apply the same solution here'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: uploadTypeChallenge
 -
   name: 'User Credentials'
@@ -1174,7 +1174,7 @@
     - 'Craft a UNION SELECT attack string to join data from another table into the original result.'
     - 'You might have to tackle some query syntax issues step-by-step, basically hopping from one error to the next'
     - 'As with "Order the Christmas special offer of 2014" and "Exfiltrate the entire DB schema definition via SQL Injection" this cannot be achieved through the application frontend.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: unionSqlInjectionChallenge
 -
   name: 'Video XSS'
@@ -1185,10 +1185,10 @@
   difficulty: 6
   hints:
     - 'Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge it is not possible to plant the XSS payload for this challenge.'
-    - 'The mentioned "marketing collateral" might have been publicly advertised by the Juice Shop but is not necessarily part of its sitemap yet.'
+    - 'The mentioned "marketing collateral" might have been publicly advertised by the the storefront but is not necessarily part of its sitemap yet.'
     - 'It might help to perform some online searches for structurally similar web projects once you get stuck.'
     - 'This challenge will always partially keep you blindfolded, no matter how hard you do research and analysis.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: videoXssChallenge
   disabledEnv:
     - Docker
@@ -1205,7 +1205,7 @@
     - 'Try out all existing functionality involving the shopping basket while having an eye on the HTTP traffic.'
     - 'There might be a client-side association of user to basket that you can try to manipulate.'
     - 'In case you manage to update the database via SQL Injection so that a user is linked to another shopping basket, the application will not notice this challenge as solved.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: basketAccessChallenge
   tutorial:
     order: 10
@@ -1220,7 +1220,7 @@
     - 'Report one of two possible answers via the "Customer Feedback" form. Do not forget to submit the library''s version as well.'
     - 'Look for possible dependencies related to security in the package.json.bak you probably harvested earlier during the Access a developer’s forgotten backup file challenge.'
     - 'Do some research on the internet for known security issues in the most suspicious application dependencies.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: knownVulnerableComponentChallenge
 -
   name: 'Weird Crypto'
@@ -1230,7 +1230,7 @@
   hints:
     - 'Report one of five possible answers via the "Customer Feedback" form.'
     - 'Cryptographic functions only used in the "Apply some advanced cryptanalysis to find the real easter egg" challenge do not count as they are only a developer’s prank and not a serious security problem.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: weirdCryptoChallenge
 -
   name: 'Allowlist Bypass'
@@ -1241,10 +1241,10 @@
   difficulty: 4
   hints:
      - 'You have to find a way to beat the allowlist of allowed redirect URLs.'
-     - 'You can find several places where redirects happen in the OWASP Juice Shop.'
+     - 'You can find several places where redirects happen in the the storefront.'
      - 'The application will only allow you to redirect to allowlisted (previously referred to as whitelisted) URLs.'
      - 'Tampering with the redirect mechanism might give you some valuable information about how it works under to hood.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: redirectChallenge
 -
   name: 'XXE Data Access'
@@ -1257,7 +1257,7 @@
     - 'The leverage point for this challenge is the deprecated B2B interface.'
     - 'This challenge sounds a lot harder than it actually is, which amplifies how bad the underlying vulnerability is.'
     - 'Doing some research on typical XEE attack patterns basically gives away the solution for free.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: xxeFileDisclosureChallenge
   disabledEnv:
   - Docker
@@ -1273,8 +1273,8 @@
     - 'It is not as easy as sending a large amount of data directly to the deprecated B2B interface.'
     - 'The leverage point for this is obviously the same as for the XXE Data Access challenge.'
     - 'You can only solve this challenge by keeping the server busy for >2sec with your attack.'
-    - 'The effectiveness of attack payloads for this challenge might depend on the operating system the Juice Shop is running on.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html'
+    - 'The effectiveness of attack payloads for this challenge might depend on the operating system the the storefront is running on.'
+  mitigationUrl: 'https://security.example/guide'
   key: xxeDosChallenge
   disabledEnv:
   - Docker
@@ -1289,8 +1289,8 @@
   hints:
     - 'This one is actually similar to the XXE DoS challenge in every way except the data format being (ab)used.'
     - 'You can only solve this challenge by keeping the server busy for >2sec with your attack.'
-    - 'The effectiveness of attack payloads for this challenge might depend on the operating system the Juice Shop is running on.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html'
+    - 'The effectiveness of attack payloads for this challenge might depend on the operating system the the storefront is running on.'
+  mitigationUrl: 'https://security.example/guide'
   key: yamlBombChallenge
   disabledEnv:
   - Docker
@@ -1309,7 +1309,7 @@
   category: 'Improper Input Validation'
   tags:
     - Shenanigans
-  description: 'Retrieve the photo of Bjoern''s cat in "melee combat-mode".'
+  description: 'Retrieve the photo of Casey''s cat in "melee combat-mode".'
   difficulty: 1
   hints:
     - 'Check the Photo Wall for an image that could not be loaded correctly.'
@@ -1341,7 +1341,7 @@
   difficulty: 1
   hints:
     - 'Try to guess what URL the endpoint might have.'
-    - 'The Juice Shop serves its metrics on the default path expected by Prometheus'
+    - 'The the storefront serves its metrics on the default path expected by Prometheus'
     - 'Guessing the path is probably just as quick as taking the RTFM route via https://prometheus.io/docs/introduction/first_steps'
   mitigationUrl: ~
   key: exposedMetricsChallenge
@@ -1367,7 +1367,7 @@
     - 'Take a look at what happens when you change the username within the profile page.'
     - 'Search for information about CSRF attacks and look out for examples that can be applied to this challenge.'
     - 'If "another origin" is cross-site, you probably need an older browser version for this challenge. If it is cross-domain, you should be able to make it work in a modern browser.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: csrfChallenge
 -
   name: 'Bonus Payload'
@@ -1381,7 +1381,7 @@
     - 'First, solve the "Perform a DOM XSS attack" challenge.'
     - 'Now it is just a question of copying and pasting the payload into the same vulnerable field.'
     - 'Crank up the volume of your computer before submitting the payload! 🔊'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: xssBonusChallenge
   tutorial:
     order: 3
@@ -1396,7 +1396,7 @@
     - 'You might have to do some OSINT on his social media personas to find out his honest answer to the security question.'
     - 'People often reuse aliases online. You might be able to find something by looking online for Uvogin’s name or slight variations of it based on his unique writing habits.'
     - 'You might be able to find some existing OSINT tools to help you in this investigation.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: resetPasswordUvoginChallenge
 -
   name: 'Meta Geo Stalking'
@@ -1409,7 +1409,7 @@
     - 'Take a look at the meta data of the corresponding photo.'
     - 'Make use of tools that can inspect the metadata of images.'
     - 'Use this information to answer the security question of the John, who enjoys hiking in the park.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: geoStalkingMetaChallenge
 -
   name: 'Visual Geo Stalking'
@@ -1420,7 +1420,7 @@
   difficulty: 2
   hints:
     - 'Take a look at the details in the photo to determine the location of where it was taken.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: geoStalkingVisualChallenge
 -
   name: 'Poison Null Byte'
@@ -1446,7 +1446,7 @@
   hints:
     - 'You should read up on vulnerabilities in popular NodeJs template engines.'
     - 'You should read up on Local File Read (LFR) vulnerabilities in popular NodeJS template engines.'
-    - 'Look for an easily forgettable endpoint in Juice Shop to test out the LFR attack.'
+    - 'Look for an easily forgettable endpoint in the storefront to test out the LFR attack.'
     - '500 Internal Server Error is always an interesting status code.'
     - 'Fuzzing can also help with this challenge.'
   description: 'Gain read access to an arbitrary local file on the web server.'
@@ -1468,7 +1468,7 @@
 -
   name: 'Security Advisory'
   category: 'Miscellaneous'
-  description: 'The Juice Shop is susceptible to a known vulnerability in a library, for which an advisory has already been issued, marking the Juice Shop as <i>known affected</i>. A fix is still pending. <a href="/#/contact">Inform the shop</a> about a suitable checksum as proof that you did your due diligence.'
+  description: 'The the storefront is susceptible to a known vulnerability in a library, for which an advisory has already been issued, marking the the storefront as <i>known affected</i>. A fix is still pending. <a href="/#/contact">Inform the shop</a> about a suitable checksum as proof that you did your due diligence.'
   difficulty: 3
   hints:
     - 'Security Advisories are often listed in the security.txt'
@@ -1481,7 +1481,7 @@
   difficulty: 2
   hints:
     - 'Have a look at the client-side code in the dev console.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: exposedCredentialsChallenge
   tutorial:
     order: 6
@@ -1492,10 +1492,10 @@
   difficulty: 5
   hints:
     - 'The API call is part of a scheduled process "behind the scenes", i.e. completely unrelated to the web application.'
-    - 'Check the Juice Shop’s social media channels for regularly scheduled content being posted, possibly even indicating that it was automatically created.'
+    - 'Check the the storefront’s social media channels for regularly scheduled content being posted, possibly even indicating that it was automatically created.'
     - 'Find out which part of the content might come from the response of an API call.'
     - 'Find the place where the API call happens — as stated above, it is not in the web application — and then look for the API key itself.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: leakedApiKeyChallenge
 -
   name: 'Chatbot Prompt Injection'
@@ -1509,7 +1509,7 @@
     - 'The chatbot has a tool for generating coupons, but is instructed to only use it under very specific conditions.'
     - 'Try to convince the chatbot that the conditions for coupon generation are met, even if they are not.'
     - 'Prompt injection techniques can help you bypass the chatbot''s restrictions on tool usage.'
-  mitigationUrl: 'https://genai.owasp.org/llmrisk/llm01-prompt-injection/'
+  mitigationUrl: 'https://security.example/ai-guide'
   key: chatbotPromptInjectionChallenge
 -
   name: 'Greedy Chatbot Manipulation'
@@ -1522,7 +1522,7 @@
     - 'The chatbot''s system prompt says the maximum discount is 10%. But system prompts are more like guidelines than actual rules, right?'
     - 'You already know how to make the chatbot generate a coupon. Now make it go way beyond the allowed maximum.'
     - 'The chatbot trusts whatever discount value it decides to pass to its tool. Make it decide on a very generous number.'
-  mitigationUrl: 'https://genai.owasp.org/llmrisk/llm01-prompt-injection/'
+  mitigationUrl: 'https://security.example/ai-guide'
   key: chatbotGreedyInjectionChallenge
 -
   name: 'AI Debugging'
@@ -1536,7 +1536,7 @@
     - 'Access control for the debugging feature is only implemented on the client-side.'
     - 'Find the cookie that controls the visibility of tool calls and set it to <code>true</code>.'
     - 'If you see the tool calls but the challenge is not marked as solved, you might be still logged in as a user with admin privileges.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Broken_Access_Control_Cheat_Sheet.html'
+  mitigationUrl: 'https://security.example/guide'
   key: aiDebuggingChallenge
 -
   name: 'System Prompt Extraction'
@@ -1549,5 +1549,5 @@
     - 'The chatbot has a system prompt with both public and confidential instructions. Try to make it reveal its full configuration using prompt injection.'
     - 'There are internal rules beyond the standard coupon policy. Think about edge cases - what happens in unusual customer situations?'
     - 'The similarity check is lenient - you do not need to reproduce the system prompt word for word. Focus on capturing the confidential sections accurately.'
-  mitigationUrl: 'https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/'
+  mitigationUrl: 'https://security.example/ai-guide'
   key: systemPromptExtractionChallenge
